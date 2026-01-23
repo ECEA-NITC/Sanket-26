@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sanket'26 - The Annual Technical Symposium by ECEA, NIT Calicut">
+    <meta name="description" content="Sanket'26 - The Annual Department Event by ECEA, NIT Calicut">
     <title>Sanket'26 - ECEA NITC</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="ecea-logo-white.jpg">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
@@ -19,7 +22,7 @@
     <div class="announcement-bar">
         <div class="announcement-content">
             <div class="scrolling-text">
-                Sanket'26 - The Annual Technical Symposium by ECEA, NIT Calicut - 31st January 2026 - Registration Opening Soon!
+                Sanket'26 - The Annual Department Event by ECEA, NIT Calicut - 31st January 2026 - Registration Opening Soon!
             </div>
         </div>
     </div>
@@ -36,9 +39,9 @@
             <li><a class="hoverStyle" href="#about">About</a></li>
             <li><a class="hoverStyle" href="#timeline">Timeline</a></li>
             <li><a class="hoverStyle" href="#events">Events</a></li>
-            <li><a class="hoverStyle" href="#registrations">Registrations</a></li>
+            <!-- <li><a class="hoverStyle" href="#registrations">Registrations</a></li> -->
             <li><a class="hoverStyle" href="#contact">Contact</a></li>
-            <li><a href="#registrations"><button class="button">Register Now</button></a></li>
+            <li><a href="#events"><button class="button">Register Now</button></a></li>
         </ul>
         
         <ul class="navbar">
@@ -51,10 +54,10 @@
             <li class="hideOnMobile hoverStyle"><a href="#about">About</a></li>
             <li class="hideOnMobile hoverStyle"><a href="#timeline">Timeline</a></li>
             <li class="hideOnMobile hoverStyle"><a href="#events">Events</a></li>
-            <li class="hideOnMobile hoverStyle"><a href="#registrations">Registrations</a></li>
+            <!-- <li class="hideOnMobile hoverStyle"><a href="#registrations">Registrations</a></li> -->
             <li class="hideOnMobile hoverStyle"><a href="#contact">Contact</a></li>
             <li class="hideOnMobile">
-                <a href="#registrations"><button class="button">Register Now</button></a>
+                <a href="#events"><button class="button">Register Now</button></a>
             </li>
             <li class="menu-button" onclick="showSidebar()">
                 <a href="#">
@@ -68,18 +71,13 @@
     <section class="hero-section" id="home">
         <div class="hero-text">
             <h1>Sanket'26</h1>
-            <h2>Annual Technical Symposium</h2>
+            <h2>Annual Department Event</h2>
             <div class="hero-divider"></div>
             <p class="hero-info">
                 <span class="date">31st January 2026</span> | 
                 <span class="location">NIT Calicut</span>
             </p>
         </div>
-    </section>
-
-    <!-- Logo Banner -->
-    <section class="logo-banner">
-        <img class="ecea-logo-main" src="ecea-logo.jpg" alt="ECEA Logo">
     </section>
 
     <!-- Main Content -->
@@ -106,18 +104,27 @@
         <!-- Events Section -->
         <section class="events" id="events">
             <h2 class="events-title">Upcoming Events</h2>
-            <p class="events-desc">
-                Sanket'26 is the annual technical symposium organized by the Electronics and Communication 
-                Engineering Association (ECEA), NIT Calicut. Details about workshops, competitions, and events 
-                will be updated soon.
-            </p>
             <div class="events-container">
-                <!-- Event cards will be added here when available -->
+                <!-- C2S Workshop Event Card -->
+                <div class="event-card">
+                    <div class="event-card-content">
+                        <h3 class="event-card-title">C2S Workshop</h3>
+                        <p class="event-card-desc">
+                            Join us for an exciting C2S (Circuit to System) Workshop as part of Sanket'26. 
+                            Learn hands-on skills and explore cutting-edge technologies in electronics and communication.
+                        </p>
+                        <div style="margin-top: 20px; text-align: center;">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDHxsSEwhLaxl59yWxayHe93X3Lu5XhT9hX_09r9lDtZIDPQ/viewform" target="_blank" rel="noopener noreferrer">
+                                <button class="button">Register Now</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Registrations Section -->
-        <section class="registrations" id="registrations">
+        <!-- <section class="registrations" id="registrations">
             <h2 class="registrations-title">Registrations</h2>
             <div class="registration-info">
                 <h3>Registration Details Coming Soon!</h3>
@@ -134,24 +141,24 @@
                     For any queries or information, please contact the ECEA team at NIT Calicut.
                 </p>
             </div>
-        </section>
+        </section> -->
 
         <!-- About Sanket Section -->
         <section class="section" id="about">
             <div class="section-header">
                 <p class="section-subtitle">About</p>
-                <h2 class="section-title">Sanket'26<br>Annual Technical Symposium</h2>
+                <h2 class="section-title">Sanket'26<br>Annual Department Event</h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        <em>Sanket'26</em> is the annual technical symposium organized by the Electronics and 
+                        <em>Sanket'26</em> is the annual department event organized by the Electronics and 
                         Communication Engineering Association (ECEA) at NIT Calicut. This flagship event brings 
                         together students, faculty, and industry professionals to celebrate innovation, creativity, 
                         and technical excellence in the field of electronics and communication engineering.
                     </p>
                     <p>
-                        The symposium features a diverse range of activities including technical workshops, competitive 
+                        The event features a diverse range of activities including technical workshops, competitive 
                         events, guest lectures by industry experts, and interactive sessions. Sanket provides a platform 
                         for students to showcase their technical skills, learn about emerging technologies, and network 
                         with peers and professionals from the industry.
@@ -186,7 +193,7 @@
                     </p>
                     <p>
                         ECEA organizes various events including technical workshops, coding competitions, hackathons, 
-                        guest lectures by industry experts, and the annual technical symposium - Sanket. The association 
+                        guest lectures by industry experts, and the annual department event - Sanket. The association 
                         plays a crucial role in bridging the gap between academic learning and practical industry 
                         requirements, providing students with opportunities to enhance their technical skills and 
                         professional development.
@@ -278,8 +285,7 @@
             </div>
             
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.3311634457845!2d75.93519731526314!3d11.257886091979846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bd83e5df1f1%3A0xd2b2d2c68b0c6e5e!2sNational%20Institute%20of%20Technology%20Calicut!5e0!3m2!1sen!2sin!4v1234567890123"
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4895.318018097805!2d75.93115761146314!3d11.321607048853092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba642fd50000001%3A0xbe8a77db953bda6c!2sNIT%20Calicut!5e1!3m2!1sen!2sin!4v1769152294010!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
