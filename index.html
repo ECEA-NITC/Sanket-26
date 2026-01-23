@@ -1,418 +1,368 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sanket'26 - ECEA NITC</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Risque&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <nav>
-            <ul class="sidebar">
-                <li onclick="hideSidebar()">
-                    ><img
-                        src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-                        alt="Close sidebar"
-                        width="26"
-                        height="26"
-                    />
-                </li>
-                <li><a class="hoverStyle" href="#home">Home</a></li>
-                <li><a class="hoverStyle" href="#about">About</a></li>
-                <li><a class="hoverStyle" href="#host">Host</a></li>
-                <li>
-                    <a class="hoverStyle" href="#registrations"
-                        >Registrations</a
-                    >
-                </li>
-                <li>
-                    <a class="hoverStyle" href="./sponsorship.html"
-                        >Sponsorship</a
-                    >
-                </li>
-                <li>
-                    <a class="hoverStyle" href="./committee.html">Committee</a>
-                </li>
-                <li>
-                    <a href="#registrations"
-                        ><button class="button">Register Now</button></a
-                    >
-                </li>
-            </ul>
-            <ul class="navbar">
-                <li>
-                    <a href="#"
-                        ><img class="logo" src="ecea-logo.jpg" alt="ecea logo"
-                    /></a>
-                </li>
-                <li class="hideOnMobile hoverStyle">
-                    <a href="#home">Home</a>
-                </li>
-                <li class="hideOnMobile hoverStyle">
-                    <a href="#about">About</a>
-                </li>
-                <li class="hideOnMobile hoverStyle">
-                    <a href="#host">Host</a>
-                </li>
-                <li class="hideOnMobile hoverStyle">
-                    <a href="#events">Events</a>
-                </li>
-                <li class="hideOnMobile hoverStyle">
-                    <a href="#registrations">Registrations</a>
-                </li>
-                <li>
-                    <a class="hideOnMobile hoverStyle" href="./sponsorship.html"
-                        >Sponsorship</a
-                    >
-                </li>
-                <li class="hideOnMobile hoverStyle">
-                    <a href="./committee.html">Committees</a>
-                </li>
-                <li class="hideOnMobile hoverStyle">
-                    <a href="./call-for-digest-submission.html"
-                        >Call for digest submission</a
-                    >
-                </li>
-                <li class="hideOnMobile">
-                    <a href="#registrations"
-                        ><button class="button">Register Now</button></a
-                    >
-                </li>
-                <li class="menu-button" onclick="showSidebar()">
-                    <img
-                        src="menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-                        alt="Icon"
-                        width="26"
-                        height="26"
-                    />
-                </li>
-            </ul>
-        </nav>
-        <div class="announcement-bar">
-            <div class="announcement-content">
-                <div class="scrolling-text">
-                    Sanket'26 - The Annual Technical Symposium by ECEA, NIT Calicut - 31st January 2026
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sanket'26 - The Annual Technical Symposium by ECEA, NIT Calicut">
+    <title>Sanket'26 - ECEA NITC</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <div class="scrolling-text">
+                Sanket'26 - The Annual Technical Symposium by ECEA, NIT Calicut - 31st January 2026 - Registration Opening Soon!
             </div>
         </div>
+    </div>
 
-        <div class="hero-section" id="home">
-            <div class="hero-text">
-                <div class="main">
-                    <h1>
-                        Sanket'26<br />Annual Technical Symposium<br />
-                    </h1>
-                    <h2>
-                        Organised by ECEA, NIT Calicut
-                    </h2>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <ul class="sidebar" id="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#">
+                    <img src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Close" width="26" height="26">
+                </a>
+            </li>
+            <li><a class="hoverStyle" href="#home">Home</a></li>
+            <li><a class="hoverStyle" href="#about">About</a></li>
+            <li><a class="hoverStyle" href="#timeline">Timeline</a></li>
+            <li><a class="hoverStyle" href="#events">Events</a></li>
+            <li><a class="hoverStyle" href="#registrations">Registrations</a></li>
+            <li><a class="hoverStyle" href="./sponsorship.html">Sponsorship</a></li>
+            <li><a class="hoverStyle" href="./committee.html">Committee</a></li>
+            <li><a class="hoverStyle" href="#contact">Contact</a></li>
+            <li><a href="#registrations"><button class="button">Register Now</button></a></li>
+        </ul>
+        
+        <ul class="navbar">
+            <li>
+                <a href="#home">
+                    <img class="logo" src="ecea-logo.jpg" alt="ECEA Logo">
+                </a>
+            </li>
+            <li class="hideOnMobile hoverStyle"><a href="#home">Home</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="#about">About</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="#timeline">Timeline</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="#events">Events</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="#registrations">Registrations</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./sponsorship.html">Sponsorship</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./committee.html">Committee</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="#contact">Contact</a></li>
+            <li class="hideOnMobile">
+                <a href="#registrations"><button class="button">Register Now</button></a>
+            </li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <img src="menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" width="26" height="26">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-text">
+            <h1>Sanket'26</h1>
+            <h2>Annual Technical Symposium</h2>
+            <div class="hero-divider"></div>
+            <p class="hero-info">
+                <span class="date">31st January 2026</span> | 
+                <span class="location">NIT Calicut</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Logo Banner -->
+    <section class="logo-banner">
+        <img class="ecea-logo-main" src="ecea-logo.jpg" alt="ECEA Logo">
+    </section>
+
+    <!-- Main Content -->
+    <div class="background-color">
+        <!-- Timeline Section -->
+        <section class="timeline-section" id="timeline">
+            <h2 class="timeline-heading">Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-card fade-in-up">
+                    <p class="date">To Be Announced</p>
+                    <p class="title">Event Registration Opens</p>
                 </div>
-                <div class="line"></div>
+                <div class="timeline-card fade-in-up">
+                    <p class="date">To Be Announced</p>
+                    <p class="title">Workshop Details Released</p>
+                </div>
+                <div class="timeline-card fade-in-up">
+                    <p class="date">31st January 2026</p>
+                    <p class="title">Sanket'26 Event Day</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events" id="events">
+            <h2 class="events-title">Upcoming Events</h2>
+            <p class="events-desc">
+                Sanket'26 is the annual technical symposium organized by the Electronics and Communication 
+                Engineering Association (ECEA), NIT Calicut. Details about workshops, competitions, and events 
+                will be updated soon.
+            </p>
+            <div class="events-container">
+                <!-- Event cards will be added here when available -->
+            </div>
+        </section>
+
+        <!-- Registrations Section -->
+        <section class="registrations" id="registrations">
+            <h2 class="registrations-title">Registrations</h2>
+            <div class="registration-info">
+                <h3>Registration Details Coming Soon!</h3>
                 <p>
-                    <span class="date">31st January 2026</span>
-                    <span class="location">| NIT, Calicut</span>
+                    Registration for Sanket'26 will open soon. Stay tuned for updates on:
+                </p>
+                <ul>
+                    <li>Workshop details and schedule</li>
+                    <li>Competition information</li>
+                    <li>Guest lectures and keynote sessions</li>
+                    <li>Registration fees and early bird offers</li>
+                </ul>
+                <p style="margin-top: 30px;">
+                    For any queries or information, please contact the ECEA team at NIT Calicut.
                 </p>
             </div>
-        </div>
-
-        <section class="ieee-banner">
-            <div class="logo-container">
-                <img
-                    class="ecea-logo-main"
-                    src="ecea-logo.jpg"
-                    alt="ECEA Logo"
-                />
-            </div>
         </section>
 
-        <section class="background-color">
-            <section class="timeline-section">
-                <h1 class="timeline-heading">Timeline</h1>
-                <div class="timeline-container">
-                    <div class="timeline-card">
-                        <p class="date">TBA</p>
-                        <p class="title">Event Registration<br />Opens</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p class="date">TBA</p>
-                        <p class="title">Workshop<br />Details Released</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p class="date">31st January 2026</p>
-                        <p class="title">Sanket'26<br />Event Day</p>
-                    </div>
-                </div>
-            </section>
-            <div class="events" id="events">
-                <div class="events-title">Upcoming Events</div>
-                <div class="events-desc">
-                    Sanket'26 is the annual technical symposium organized by the Electronics and Communication Engineering Association (ECEA), NIT Calicut.
-                    Details about workshops, competitions, and events will be updated soon.
-                </div>
-                <div class="events-container">
-                    <!-- Event posters will be added here -->
-                </div>
+        <!-- About Sanket Section -->
+        <section class="section" id="about">
+            <div class="section-header">
+                <p class="section-subtitle">About</p>
+                <h2 class="section-title">Sanket'26<br>Annual Technical Symposium</h2>
             </div>
-            <div class="registrations" id="registrations">
-                <div class="registrations-title">Registrations</div>
-                <div
-                    class="registration-benefits"
-                    style="
-                        color: #ffffff;
-                        font-size: 20px;
-                        text-align: center;
-                        max-width: 1250px;
-                    "
-                >
-                    <h3 style="margin-bottom: 20px; color: #f78c40">
-                        Registration Details Coming Soon!
-                    </h3>
+            <div class="about-content">
+                <div class="about-text">
                     <p>
-                        Registration for Sanket'26 will open soon. Stay tuned for updates on:
+                        <em>Sanket'26</em> is the annual technical symposium organized by the Electronics and 
+                        Communication Engineering Association (ECEA) at NIT Calicut. This flagship event brings 
+                        together students, faculty, and industry professionals to celebrate innovation, creativity, 
+                        and technical excellence in the field of electronics and communication engineering.
                     </p>
-                    <ul
-                        style="
-                            list-style-type: none;
-                            padding-left: 0;
-                            margin-top: 15px;
-                            text-align: left;
-                            display: inline-block;
-                        "
-                    >
-                        <li
-                            style="
-                                margin-bottom: 10px;
-                                padding-left: 25px;
-                                position: relative;
-                            "
-                        >
-                            <span
-                                style="
-                                    color: #f78c40;
-                                    position: absolute;
-                                    left: 0;
-                                "
-                                >•</span
-                            >
-                            Workshop details and schedule
-                        </li>
-                        <li
-                            style="
-                                margin-bottom: 10px;
-                                padding-left: 25px;
-                                position: relative;
-                            "
-                        >
-                            <span
-                                style="
-                                    color: #f78c40;
-                                    position: absolute;
-                                    left: 0;
-                                "
-                                >•</span
-                            >
-                            Competition information
-                        </li>
-                        <li
-                            style="
-                                margin-bottom: 10px;
-                                padding-left: 25px;
-                                position: relative;
-                            "
-                        >
-                            <span
-                                style="
-                                    color: #f78c40;
-                                    position: absolute;
-                                    left: 0;
-                                "
-                                >•</span
-                            >
-                            Guest lectures and keynote sessions
-                        </li>
-                        <li
-                            style="
-                                margin-bottom: 10px;
-                                padding-left: 25px;
-                                position: relative;
-                            "
-                        >
-                            <span
-                                style="
-                                    color: #f78c40;
-                                    position: absolute;
-                                    left: 0;
-                                "
-                                >•</span
-                            >
-                            Registration fees and early bird offers
-                        </li>
-                    </ul>
+                    <p>
+                        The symposium features a diverse range of activities including technical workshops, competitive 
+                        events, guest lectures by industry experts, and interactive sessions. Sanket provides a platform 
+                        for students to showcase their technical skills, learn about emerging technologies, and network 
+                        with peers and professionals from the industry.
+                    </p>
+                    <p>
+                        With its focus on hands-on learning and practical applications, Sanket'26 aims to inspire the 
+                        next generation of engineers and innovators, fostering a culture of technical excellence and 
+                        collaborative growth within the ECE community at NIT Calicut.
+                    </p>
                 </div>
             </div>
-            <div class="microsoft-service">
-                For any queries or information, please contact the ECEA team at NIT Calicut.
-            </div>
-
-            <div class="mb-5 text-center about-section">
-                <h6 class="mb-1 ml-5 font-sizes-orange">
-                    <b class="orange">A B O U T</b>
-                </h6>
-                <h1 class="font-sizes-white">
-                    <b>Sanket'26<br />Annual Technical Symposium</b>
-                </h1>
-                <div class="col-15 col-md-6 mx-auto text-center para mt-3">
-                  <b><em>Sanket'26</em></b> is the annual technical symposium organized by the Electronics and Communication Engineering Association (ECEA) at NIT Calicut. This flagship event brings together students, faculty, and industry professionals to celebrate innovation, creativity, and technical excellence in the field of electronics and communication engineering.
-                    <br /><br />
-                    The symposium features a diverse range of activities including technical workshops, competitive events, guest lectures by industry experts, and interactive sessions. Sanket provides a platform for students to showcase their technical skills, learn about emerging technologies, and network with peers and professionals from the industry.
-                    <br /><br />
-                    With its focus on hands-on learning and practical applications, Sanket'26 aims to inspire the next generation of engineers and innovators, fostering a culture of technical excellence and collaborative growth within the ECE community at NIT Calicut.
-                </div>
-            </div>
-
-            <hr class="white-hr mb-4" style="margin-left: 0px" />
-            <div class="container mb-3 target-section" id="about">
-                <h6 class="mb-1 ml-5 margin-left-52 font-sizes-orange">
-                    <b class="orange">A B O U T</b>
-                </h6>
-                <h2 class="mb-4 font-sizes-white">
-                    <b class="ml-3 margin-left-52">ECEA, NIT Calicut</b>
-                </h2>
-                <div class="row responsive-row1 text-center">
-                    <div class="col-12 col-md-6">
-                        <div class="image-container">
-                            <img
-                                class="admin-block"
-                                src="ecea-logo.jpg"
-                                alt="ECEA Logo"
-                            />
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 text-center para mt-3">
-                      The <b><em>Electronics and Communication Engineering Association (ECEA)</em></b> is the official departmental association of the ECE Department at NIT Calicut. ECEA serves as a vibrant platform for students to engage in technical, cultural, and professional activities throughout the academic year.
-                        <br /><br />
-                        ECEA organizes various events including technical workshops, coding competitions, hackathons, guest lectures by industry experts, and the annual technical symposium - Sanket. The association plays a crucial role in bridging the gap between academic learning and practical industry requirements, providing students with opportunities to enhance their technical skills and professional development.
-                        <br /><br />
-                        Through its diverse initiatives and events, ECEA fosters a culture of innovation, collaboration, and excellence within the ECE community at NIT Calicut, preparing students for successful careers in the rapidly evolving field of electronics and communication engineering.
-                    </div>
-                </div>
-            </div>
-            <br />
-            <hr class="white-hr white-hr2 mb-4 mt-4" />
-            <div class="container mb-5 target-section" id="host">
-                <h6 class="mb-1 ml-4 margin-left-host font-sizes-orange">
-                    <b class="orange">O U R&nbsp; H O S T</b>
-                </h6>
-                <h2 class="ml-4 mb-4 margin-left-host font-sizes-white">
-                    <b>NIT CALICUT</b>
-                </h2>
-                <div class="row responsive-row2">
-                    <div class="col-12 col-md-6 text-center para mt-3">
-                      The <b><em>National Institute of Technology Calicut (NITC)</em></b> is an <b><em>Institute of National Importance</em></b> and one of India's leading institutions in engineering, technology, architecture, and management education. In the NIRF 2025 rankings, <b><em>NIT Calicut was placed 21st in Engineering</em></b>, reaffirming its stature among the top engineering institutions in the country.
-                        <br /><br />
-                        The <b><em>Department of Electronics and Communication Engineering</em></b> at NIT Calicut is one of the premier departments, known for its excellence in teaching, research, and innovation. The department offers undergraduate, postgraduate, and doctoral programs, with state-of-the-art laboratories and research facilities. Faculty members are actively involved in cutting-edge research in areas such as VLSI design, wireless communications, signal processing, embedded systems, and artificial intelligence.
-                        <br /><br />
-                        The ECE department has a strong focus on industry collaboration and practical learning, regularly organizing workshops, seminars, and technical events through ECEA to ensure students are well-prepared for the challenges of the modern technology landscape.
-                    </div>
-                    <div class="col-12 col-md-6 text-center">
-                        <div class="image-container">
-                            <img
-                                class="admin-block"
-                                src="admin-block.webp"
-                                alt="admin-block"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="white-hr-3 white-hr" />
-
-            <div class="container mb-3 mt-5">
-                <h1 class="text-center mb-3 font-sizes-white special">
-                    <b>Contact Details</b>
-                </h1>
-                <h6 class="text-center mb-5 font-sizes-orange special-1">
-                    <b class="orange">Get In Touch With Us</b>
-                </h6>
-                <div class="row responsive-row1">
-                    <div class="col-12 col-md-7">
-                        <p class="margin-top font-style"><b>Location:</b></p>
-                        <p class="mt-4 gap">
-                            National Institute of Technology,Calicut<br />
-                            NIT Campus P.O 673601<br />
-                            Kozhikode, Kerala<br />
-                        </p>
-                        <p class="mt-4 font-style gap">
-                            <b>Nearest Railway:</b>
-                        </p>
-                        <p class="mt-3">Kozhikode 27KM</p>
-                        <p class="mt-4 font-style gap">
-                            <b>Nearest Airport:</b>
-                        </p>
-                        <p class="mt-3">Calicut International Airport 27KM</p>
-                    </div>
-
-                    <iframe
-                        class="responsive col-12 col-md-5"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2730733.658000074!2d83.38249852470864!3d19.049280997981015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba642febeb0e1ab%3A0x3a6d7f0c60e80563!2sCalicut%20Mukkam%20Road%2C%20Kerala!5e0!3m2!1sen!2sin!4v1751300223753!5m2!1sen!2sin"
-                        style="border: 0"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                </div>
-            </div>
-
-            <footer>
-                <hr class="orange-hr mb-5" />
-                <div class="container">
-                    <div class="row text-center flex-wrap">
-                        <div class="col-6 col-md-4 mb-5">
-                            Contact<br />Sai<br />8089370282
-                        </div>
-                        <div class="col-6 col-md-4 mb-5">
-                            Contact <br />Sabin<br />9446978544
-                        </div>
-                        <div class="col-12 col-md-4">
-                            Mail ID<br />
-                            <div class="row">
-                                <p class="wrap">ecea@nitc.ac.in</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="orange-hr" />
-                <p class="text-center">&copy; Copyright 2026 ECEA, NIT Calicut</p>
-            </footer>
         </section>
 
-        <script>
-            function showSidebar() {
-                const sidebar = document.querySelector(".sidebar");
-                sidebar.style.display = "flex";
-            }
+        <div class="about-divider"></div>
 
-            function hideSidebar() {
-                const sidebar = document.querySelector(".sidebar");
-                sidebar.style.display = "none";
+        <!-- About ECEA Section -->
+        <section class="section">
+            <div class="section-header">
+                <p class="section-subtitle">About</p>
+                <h2 class="section-title">ECEA, NIT Calicut</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image-container">
+                    <img src="ecea-logo.jpg" alt="ECEA Logo">
+                </div>
+                <div class="about-text">
+                    <p>
+                        The <em>Electronics and Communication Engineering Association (ECEA)</em> is the official 
+                        departmental association of the ECE Department at NIT Calicut. ECEA serves as a vibrant 
+                        platform for students to engage in technical, cultural, and professional activities throughout 
+                        the academic year.
+                    </p>
+                    <p>
+                        ECEA organizes various events including technical workshops, coding competitions, hackathons, 
+                        guest lectures by industry experts, and the annual technical symposium - Sanket. The association 
+                        plays a crucial role in bridging the gap between academic learning and practical industry 
+                        requirements, providing students with opportunities to enhance their technical skills and 
+                        professional development.
+                    </p>
+                    <p>
+                        Through its diverse initiatives and events, ECEA fosters a culture of innovation, collaboration, 
+                        and excellence within the ECE community at NIT Calicut, preparing students for successful careers 
+                        in the rapidly evolving field of electronics and communication engineering.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="about-divider"></div>
+
+        <!-- About NIT Calicut Section -->
+        <section class="section">
+            <div class="section-header">
+                <p class="section-subtitle">Our Host</p>
+                <h2 class="section-title">NIT Calicut</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        The <em>National Institute of Technology Calicut (NITC)</em> is an <em>Institute of National 
+                        Importance</em> and one of India's leading institutions in engineering, technology, architecture, 
+                        and management education. In the NIRF 2025 rankings, <em>NIT Calicut was placed 21st in 
+                        Engineering</em>, reaffirming its stature among the top engineering institutions in the country.
+                    </p>
+                    <p>
+                        The <em>Department of Electronics and Communication Engineering</em> at NIT Calicut is one of 
+                        the premier departments, known for its excellence in teaching, research, and innovation. The 
+                        department offers undergraduate, postgraduate, and doctoral programs, with state-of-the-art 
+                        laboratories and research facilities. Faculty members are actively involved in cutting-edge 
+                        research in areas such as VLSI design, wireless communications, signal processing, embedded 
+                        systems, and artificial intelligence.
+                    </p>
+                    <p>
+                        The ECE department has a strong focus on industry collaboration and practical learning, regularly 
+                        organizing workshops, seminars, and technical events through ECEA to ensure students are 
+                        well-prepared for the challenges of the modern technology landscape.
+                    </p>
+                </div>
+                <div class="about-image-container">
+                    <img src="admin-block.webp" alt="NIT Calicut Admin Block">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Contact Details</h2>
+                <p class="section-subtitle">Get In Touch With Us</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Location</h4>
+                    <p>National Institute of Technology, Calicut</p>
+                    <p>NIT Campus P.O 673601</p>
+                    <p>Kozhikode, Kerala</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Contact - Sai</h4>
+                    <p>Phone: <a href="tel:+918089370282">8089370282</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Contact - Sabin</h4>
+                    <p>Phone: <a href="tel:+919446978544">9446978544</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Email</h4>
+                    <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Nearest Railway</h4>
+                    <p>Kozhikode - 27 KM</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Nearest Airport</h4>
+                    <p>Calicut International Airport - 27 KM</p>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.3311634457845!2d75.93519731526314!3d11.257886091979846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bd83e5df1f1%3A0xd2b2d2c68b0c6e5e!2sNational%20Institute%20of%20Technology%20Calicut!5e0!3m2!1sen!2sin!4v1234567890123"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-divider"></div>
+            
+            <div class="footer-content">
+                <div class="footer-item">
+                    <h4>Contact - Sai</h4>
+                    <p><a href="tel:+918089370282">8089370282</a></p>
+                </div>
+                
+                <div class="footer-item">
+                    <h4>Contact - Sabin</h4>
+                    <p><a href="tel:+919446978544">9446978544</a></p>
+                </div>
+                
+                <div class="footer-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
+                </div>
+            </div>
+            
+            <p class="copyright">© Copyright 2026 ECEA, NIT Calicut. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.display = 'flex';
+        }
+
+        function hideSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.display = 'none';
+        }
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (!sidebar.contains(event.target) && !menuButton.contains(event.target)) {
+                sidebar.style.display = 'none';
             }
-        </script>
-        <script src="script.js"></script>
-    </body>
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close sidebar if open
+                    hideSidebar();
+                }
+            });
+        });
+    </script>
+</body>
 </html>

@@ -1,303 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Committee - Sanket'26, ECEA NITC">
     <title>Committee - Sanket'26</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Risque&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav>
-      <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a href="#"
-            ><img
-              src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-              alt="Close sidebar"
-              width="26"
-              height="26"
-          /></a>
-        </li>
-        <li><a class="hoverStyle" href="./index.html#home">Home</a></li>
-        <li>
-          <a class="hoverStyle" href="./index.html#about">About</a>
-        </li>
-        <li><a class="hoverStyle" href="./index.html#host">Host</a></li>
-        <li>
-          <a class="hoverStyle" href="./sponsorship.html">Sponsorship</a>
-        </li>
-        <li>
-          <a class="hoverStyle" href="./committee.html">Committee</a>
-        </li>
-        <li>
-          <a href="#"
-            ><button class="button">Register Now</button></a
-          >
-        </li>
-      </ul>
-      <ul class="navbar">
-        <li>
-          <a href="#"><img class="logo" src="ecea-logo.jpg" alt="ecea logo" /></a>
-        </li>
-        <li class="hideOnMobile hoverStyle">
-          <a href="./index.html#home">Home</a>
-        </li>
-        <li class="hideOnMobile hoverStyle">
-          <a href="./index.html#about">About</a>
-        </li>
-        <li class="hideOnMobile hoverStyle">
-          <a href="./index.html#host">Host</a>
-        </li>
-        <li class="hideOnMobile hoverStyle">
-          <a href="./sponsorship.html">Sponsorship</a>
-        </li>
-        <li class="hideOnMobile hoverStyle">
-          <a href="./committee.html">Committee</a>
-        </li>
-        <li class="hideOnMobile">
-          <a href="#"
-            ><button class="button">Register Now</button></a
-          >
-        </li>
-        <li class="menu-button" onclick="showSidebar()">
-          <a href="#"
-            ><img
-              src="menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-              alt="Icon"
-              width="26"
-              height="26"
-          /></a>
-        </li>
-      </ul>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <div class="scrolling-text">
+                Sanket'26 - The Annual Technical Symposium by ECEA, NIT Calicut - 31st January 2026 - Registration Opening Soon!
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <ul class="sidebar" id="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#">
+                    <img src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Close" width="26" height="26">
+                </a>
+            </li>
+            <li><a class="hoverStyle" href="./index.html#home">Home</a></li>
+            <li><a class="hoverStyle" href="./index.html#about">About</a></li>
+            <li><a class="hoverStyle" href="./index.html#timeline">Timeline</a></li>
+            <li><a class="hoverStyle" href="./index.html#events">Events</a></li>
+            <li><a class="hoverStyle" href="./index.html#registrations">Registrations</a></li>
+            <li><a class="hoverStyle" href="./sponsorship.html">Sponsorship</a></li>
+            <li><a class="hoverStyle" href="./committee.html">Committee</a></li>
+            <li><a class="hoverStyle" href="./index.html#contact">Contact</a></li>
+            <li><a href="./index.html#registrations"><button class="button">Register Now</button></a></li>
+        </ul>
+        
+        <ul class="navbar">
+            <li>
+                <a href="./index.html">
+                    <img class="logo" src="ecea-logo.jpg" alt="ECEA Logo">
+                </a>
+            </li>
+            <li class="hideOnMobile hoverStyle"><a href="./index.html#home">Home</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./index.html#about">About</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./index.html#timeline">Timeline</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./index.html#events">Events</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./index.html#registrations">Registrations</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./sponsorship.html">Sponsorship</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./committee.html">Committee</a></li>
+            <li class="hideOnMobile hoverStyle"><a href="./index.html#contact">Contact</a></li>
+            <li class="hideOnMobile">
+                <a href="./index.html#registrations"><button class="button">Register Now</button></a>
+            </li>
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#">
+                    <img src="menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" width="26" height="26">
+                </a>
+            </li>
+        </ul>
     </nav>
-        <div class="announcement-bar">
-            <div class="announcement-content">
-                <div class="scrolling-text">
-                    Sanket'26 - The Annual Technical Symposium by ECEA, NIT Calicut - 31st January 2026
+
+    <!-- Main Content -->
+    <div class="background-color">
+        <section class="committee-content">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="sponsorship-main-heading">Committee</h1>
+                </div>
+
+                <!-- Core Team Section -->
+                <div style="margin-bottom: 80px;">
+                    <h2 class="sponsorship-sub-heading">Core Team</h2>
+                    <div class="committee-grid">
+                        <!-- Placeholder for committee members -->
+                        <div class="committee-card">
+                            <div style="text-align: center; padding: 40px 20px;">
+                                <h3 style="color: var(--primary-orange); font-size: 1.5rem; margin-bottom: 20px;">
+                                    Coming Soon
+                                </h3>
+                                <p style="color: var(--text-gray); font-size: 1rem;">
+                                    Committee members will be updated soon.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="sponsorship-sub-heading">Contact Information</h2>
+                    <div class="committee-grid">
+                        <div class="committee-card">
+                            <h4 style="color: var(--primary-orange); font-size: 1.4rem; margin-bottom: 15px;">
+                                General Inquiries
+                            </h4>
+                            <p style="color: var(--text-white); font-size: 1rem;">
+                                Email: <a href="mailto:ecea@nitc.ac.in" style="color: var(--primary-orange); text-decoration: none;">ecea@nitc.ac.in</a>
+                            </p>
+                        </div>
+
+                        <div class="committee-card">
+                            <h4 style="color: var(--primary-orange); font-size: 1.4rem; margin-bottom: 15px;">
+                                Contact - Sai
+                            </h4>
+                            <p style="color: var(--text-white); font-size: 1rem;">
+                                Phone: <a href="tel:+918089370282" style="color: var(--primary-orange); text-decoration: none;">8089370282</a>
+                            </p>
+                        </div>
+
+                        <div class="committee-card">
+                            <h4 style="color: var(--primary-orange); font-size: 1.4rem; margin-bottom: 15px;">
+                                Contact - Sabin
+                            </h4>
+                            <p style="color: var(--text-white); font-size: 1rem;">
+                                Phone: <a href="tel:+919446978544" style="color: var(--primary-orange); text-decoration: none;">9446978544</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-
-    <section class="background-color">
-      <div class="container">
-        <div
-          class="committee-content"
-          style="padding-top: 120px; padding-bottom: 40px"
-        >
-          <h1 class="sponsorship-main-heading text-center">Committee</h1>
-
-          <h2 class="sponsorship-sub-heading">Core Team</h2>
-          <div class="committee-section">
-            <p style="color: white; text-align: center; font-size: 18px; margin: 20px 0;">
-              Committee members will be updated soon.
-            </p>
-          </div>
-
-          <h2 class="sponsorship-sub-heading mt-5">Contact Information</h2>
-          <div class="committee-section">
-            <div class="contact-info-grid">
-              <div class="contact-info-card">
-                <h4>General Inquiries</h4>
-                <p>
-                  Email:
-                  <a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a>
-                </p>
-              </div>
-
-              <div class="contact-info-card">
-                <h4>Contact</h4>
-                <p>Sai</p>
-                <p>Phone: 8089370282</p>
-              </div>
-              <div class="contact-info-card">
-                <h4>Contact</h4>
-                <p>Sabin</p>
-                <p>Phone: 9446978544</p>
-              </div>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-divider"></div>
+            
+            <div class="footer-content">
+                <div class="footer-item">
+                    <h4>Contact - Sai</h4>
+                    <p><a href="tel:+918089370282">8089370282</a></p>
+                </div>
+                
+                <div class="footer-item">
+                    <h4>Contact - Sabin</h4>
+                    <p><a href="tel:+919446978544">9446978544</a></p>
+                </div>
+                
+                <div class="footer-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+            
+            <p class="copyright">© Copyright 2026 ECEA, NIT Calicut. All rights reserved.</p>
+        </footer>
+    </div>
 
-      <footer>
-        <hr class="orange-hr mb-5" />
-        <div class="container">
-          <div class="row text-center flex-wrap">
-            <div class="col-6 col-md-4 mb-5">
-              Contact<br />Sai<br />8089370282
-            </div>
-            <div class="col-6 col-md-4 mb-5">
-              Contact <br />Sabin<br />9446978544
-            </div>
-            <div class="col-12 col-md-4">
-              Mail ID<br />
-              <div class="row">
-                <p class="wrap">ecea@nitc.ac.in</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="orange-hr" />
-        <p class="text-center">&copy; Copyright 2026 ECEA, NIT Calicut</p>
-      </footer>
-    </section>
-
+    <!-- JavaScript -->
     <script>
-      function showSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "flex";
-      }
+        function showSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.display = 'flex';
+        }
 
-      function hideSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "none";
-      }
+        function hideSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.display = 'none';
+        }
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuButton = document.querySelector('.menu-button');
+            
+            if (!sidebar.contains(event.target) && !menuButton.contains(event.target)) {
+                sidebar.style.display = 'none';
+            }
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     </script>
-
-    <style>
-      .committee-content {
-        font-family: "Montserrat", sans-serif;
-      }
-
-      .committee-section {
-        margin-bottom: 3rem;
-      }
-
-      .committee-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(232, 119, 34, 0.3);
-        border-radius: 12px;
-        padding: 1.5rem;
-        height: 100%;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
-      }
-
-      .member-photo {
-        margin-bottom: 1rem;
-      }
-
-      .member-photo img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #e87722;
-        background-color: rgba(232, 119, 34, 0.1);
-      }
-
-      .committee-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(232, 119, 34, 0.2);
-        border-color: rgba(232, 119, 34, 0.6);
-      }
-
-      .committee-member h4 {
-        color: #e87722;
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      .committee-member .position {
-        color: white;
-        font-size: 1.1rem;
-        font-weight: 500;
-        margin-bottom: 0.3rem;
-      }
-
-      .committee-member .department {
-        color: #ccc;
-        font-size: 0.95rem;
-        margin-bottom: 0.3rem;
-      }
-
-      .committee-member .contact {
-        color: #e87722;
-        font-size: 0.9rem;
-        font-weight: 500;
-      }
-
-      .contact-info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1rem;
-      }
-
-      .contact-info-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(232, 119, 34, 0.3);
-        border-radius: 12px;
-        padding: 1.5rem;
-        text-align: center;
-      }
-
-      .contact-info-card h4 {
-        color: #e87722;
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      .contact-info-card p {
-        color: white;
-        margin-bottom: 0.5rem;
-      }
-
-      .contact-info-card a {
-        color: #e87722;
-        text-decoration: none;
-      }
-
-      .contact-info-card a:hover {
-        text-decoration: underline;
-      }
-
-      @media (max-width: 768px) {
-        .committee-content {
-          padding: 100px 20px 40px;
-        }
-
-        .committee-card {
-          margin-bottom: 1rem;
-        }
-
-        .contact-info-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .committee-member h4 {
-          font-size: 1.1rem;
-        }
-
-        .committee-member .position {
-          font-size: 1rem;
-        }
-
-        .committee-member .department {
-          font-size: 0.85rem;
-        }
-      }
-    </style>
-  </body>
+</body>
 </html>
