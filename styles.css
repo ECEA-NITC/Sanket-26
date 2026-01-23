@@ -132,7 +132,7 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 1.5rem;
+    padding: 0.3rem 1.5rem;
     gap: 0.3rem;
 }
 
@@ -141,13 +141,13 @@ nav li {
 }
 
 nav a {
-    padding: 0.4rem 0.8rem;
+    padding: 0.3rem 0.8rem;
     text-decoration: none;
     display: flex;
     align-items: center;
     color: var(--text-white);
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     transition: var(--transition);
     position: relative;
 }
@@ -178,7 +178,7 @@ nav li:first-child {
 }
 
 .logo {
-    width: 140px;
+    width: 120px;
     height: auto;
     object-fit: contain;
     transition: var(--transition);
@@ -224,6 +224,7 @@ nav li:first-child {
     padding: 1rem;
     border-radius: 10px;
     transition: var(--transition);
+    font-size: 16px;
 }
 
 .sidebar a:hover {
@@ -1030,7 +1031,7 @@ footer .copyright {
     }
     
     nav ul {
-        padding: 0.5rem 1rem;
+        padding: 0.3rem 1rem;
     }
     
     .about-content {
@@ -1057,11 +1058,11 @@ footer .copyright {
     }
     
     nav ul {
-        padding: 0.4rem 0.8rem;
+        padding: 0.2rem 0.8rem;
     }
     
     .logo {
-        width: 110px;
+        width: 100px;
     }
     
     .hero-section {
@@ -1121,7 +1122,7 @@ footer .copyright {
     }
     
     .logo {
-        width: 100px;
+        width: 90px;
     }
     
     .button {
