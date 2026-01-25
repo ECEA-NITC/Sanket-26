@@ -97,7 +97,7 @@ font-weight: 600;
 padding-left: 100%;
 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 letter-spacing: 0.5px;
-color: var(--text-white);
+color: #000 !important;
 }
 
 @keyframes scroll-left {
