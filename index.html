@@ -1,370 +1,639 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sanket'26 - The Annual Department Event by ECEA, NIT Calicut">
-    <title>Sanket'26 - ECEA NITC</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="ecea-logo.png">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Sanket'26 - The Annual Department Event by ECEA, NIT Calicut">
+  <title>Sanket'26 - ECEA NITC</title>
+  <link rel="icon" type="image/jpeg" href="ecea-logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* NeueMachina headers - local files (woff preferred, otf fallback) */
+    @font-face{
+      font-family: "NeueMachina";
+      src: url("./neue-machina/NeueMachina-Regular.woff") format("woff"),
+           url("./neue-machina/NeueMachina-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face{
+      font-family: "NeueMachina";
+      src: url("./neue-machina/NeueMachina-Ultrabold.woff") format("woff"),
+           url("./neue-machina/NeueMachina-Ultrabold.otf") format("opentype");
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face{
+      font-family: "NeueMachina";
+      src: url("./neue-machina/NeueMachina-Light.woff") format("woff"),
+           url("./neue-machina/NeueMachina-Light.otf") format("opentype");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root{
+      --bg:#0b0b0b;
+      --panel:#0f0f0f;
+      --muted:#bfbfbf;
+      --accent:#ffffff;
+      --nav-height:72px;
+      --banner-height:44px;
+      --maxwidth:1200px;
+      --ease: cubic-bezier(.2,.9,.25,1);
+      --shadow: 0 10px 40px rgba(0,0,0,0.7);
+    }
+
+    /* base (body text uses Sora then Inter as requested) */
+    html,body{ height:100%; margin:0; font-family:"Sora","Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background: linear-gradient(180deg,#070707 0%, #0d0d0d 45%, #0b0b0b 100%); color:var(--muted); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.45; }
+    a{ color:inherit; text-decoration:none; }
+    img{ display:block; max-width:100%; height:auto; }
+
+    /* ensure headings use NeueMachina (headers etc) */
+    h1,h2,h3,h4,h5,h6,
+    .section-title,
+    .timeline-heading,
+    .events-title,
+    .event-card-title,
+    .hero-text h1,
+    .hero-text h2,
+    .timeline-card .title,
+    .contact-card h4,
+    .footer-item h4{
+      font-family: "NeueMachina","Sora","Inter",system-ui;
+      letter-spacing: normal;
+      margin:0;
+    }
+
+    /* IMPORTANT: reserve space so fixed navbar + banner do not overlap content */
+    body { padding-top: calc(var(--nav-height) + var(--banner-height) + 24px); }
+
+    /* NAVBAR (fixed, full-width, NO floating/rounded) */
+    #navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      height:var(--nav-height);
+      z-index:1200;
+      background: rgba(6,6,6,0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(8px) saturate(110%);
+      box-shadow: var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .nav-inner{
+      max-width:var(--maxwidth);
+      width:100%;
+      padding:10px 20px;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      justify-content:space-between;
+      box-sizing:border-box;
+    }
+
+    .nav-left,.nav-center,.nav-right{ display:flex; align-items:center; gap:12px; }
+    .logo{ width:54px; height:auto; display:block; object-fit:contain; }
+    .nav-center{ gap:18px; }
+    .nav-center a{ padding:8px 12px; border-radius:8px; font-weight:600; color:var(--muted); font-size:15px; }
+    .nav-center a:hover{ background:rgba(255,255,255,0.02); }
+    .nav-right{ margin-left:auto; gap:12px; align-items:center; }
+    .nav-right .button{ padding:9px 14px; border-radius:10px; border:1.4px solid rgba(255,255,255,0.08); font-weight:700; }
+
+    .social-icons{ display:flex; gap:10px; align-items:center; }
+    .social-icons a img{ width:22px; height:22px; filter:invert(100%); display:block; }
+
+    .menu-button{ display:none; align-items:center; justify-content:center; padding:6px; border-radius:10px; cursor:pointer; background:transparent; }
+
+    .announcement-bar{
+      position:fixed;
+      top:var(--nav-height);
+      left:0;
+      right:0;
+      height:var(--banner-height);
+      z-index:1100;
+      background: #ffffff;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      backdrop-filter: blur(4px);
+    }
+    .announcement-inner{
+      max-width:var(--maxwidth);
+      width:100%;
+      padding:6px 18px;
+      box-sizing:border-box;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .announcement-bar .announcement-inner .scrolling-text{
+    all: unset;
+    display: inline-block;
+    color: #000;
+    font-family: "Sora","Inter",system-ui;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    animation: marquee 18s linear infinite;
+    }
+    .scrolling-text::after{ content:' '; padding-left:60px; }
+    @keyframes marquee { 0%{ transform: translateX(100%); } 100%{ transform: translateX(-100%); } }
+    .scrolling-text{ display:inline-block; animation:marquee 18s linear infinite; }
+
+    .hero-section{ display:flex; align-items:center; justify-content:center; height:70vh; min-height:420px; max-width:1400px; margin:24px auto; text-align:center; padding:24px; position:relative; }
+    .hero-text h1{ font-size:64px; margin:0; color:var(--accent); letter-spacing:-1px; line-height:0.95; text-shadow: 0 10px 30px rgba(0,0,0,0.85); }
+    .hero-text h2{ font-weight:600; margin:10px 0 6px 0; color:var(--muted); font-size:20px; font-family:"NeueMachina","Sora","Inter",system-ui; }
+    .hero-divider{ height:2px; width:120px; background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02)); margin:18px auto; border-radius:4px; }
+    .hero-info{ color:var(--muted); font-weight:500; font-size:15px; letter-spacing:.2px; }
+
+    .background-color{ max-width:var(--maxwidth); margin:0 auto 80px; padding:10px 22px 60px; box-sizing:border-box; }
+
+    .timeline-section{ margin-top:16px; text-align:center; }
+    .timeline-heading{ color:var(--accent); font-size:28px; margin-bottom:18px; font-weight:800; letter-spacing:.4px; }
+    .timeline-container{ display:flex; gap:18px; justify-content:center; align-items:stretch; flex-wrap:wrap; padding:18px; margin:0 auto; max-width:1000px; }
+    .timeline-card{ background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015)); border:1px solid rgba(255,255,255,0.03); min-width:240px; width:260px; padding:20px; border-radius:12px; box-shadow: 0 8px 40px rgba(0,0,0,0.55); transition: transform .28s var(--ease), box-shadow .28s var(--ease); text-align:center; }
+    .timeline-card:hover{ transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.7); }
+    .timeline-card .date{ color:var(--muted); font-weight:700; margin-bottom:8px; }
+    .timeline-card .title{ color:var(--accent); font-weight:800; font-size:16px; }
+
+    .events-title{ color:var(--accent); margin-top:40px; font-size:24px; text-align:center; font-weight:800; }
+    .events-container{ display:flex; justify-content:center; gap:20px; padding:22px; flex-wrap:wrap; }
+    .event-card{ width:360px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015)); border-radius:12px; padding:18px; border:1px solid rgba(255,255,255,0.03); box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
+    .event-card-title{ color:var(--accent); margin:0 0 6px; font-weight:800; font-size:18px; font-family:"NeueMachina","Sora","Inter",system-ui; }
+    .event-card-desc{ color:var(--muted); font-size:14px; }
+
+    .section{ margin-top:40px; padding:18px 8px; }
+    .section-header{ text-align:left; margin-bottom:18px; }
+    .section-subtitle{ color:var(--muted); font-weight:600; margin:0; font-size:14px; }
+    .section-title{ color:var(--accent); margin:6px 0 0; font-weight:800; font-size:22px; font-family:"NeueMachina","Sora","Inter",system-ui; }
+    .about-content{ display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .about-text{ flex:1 1 420px; color:var(--muted); }
+    .about-image-container img{ width:100%; max-width:300px;height:auto; display:block; }
+
+    .about-divider{ height:1px; width:100%; background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent); margin:30px 0; }
+
+    .contact-grid{ display:grid; grid-template-columns: repeat(2, minmax(280px, 1fr)); gap:18px; margin-top:18px; justify-items:stretch; align-items:stretch; max-width:900px; margin-left:auto; margin-right:auto; }
+    .contact-card{ background:var(--panel); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.02); box-shadow: 0 8px 40px rgba(0,0,0,0.5); color:var(--muted); }
+    .contact-card h4{ color:var(--accent); margin:0 0 6px; font-size:15px; font-family:"NeueMachina","Sora","Inter",system-ui; }
+    .map-container{ margin-top:18px; display:flex; justify-content:center; }
+    .map-container iframe{ max-width:100%; border-radius:12px; border:1px solid rgba(255,255,255,0.03); }
+
+    footer{ margin-top:36px; color:var(--muted); padding:26px 12px 36px; text-align:center; }
+    .footer-divider{ height:1px; width:70%; margin:0 auto 20px; background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); }
+    .footer-content{ display:flex; justify-content:center; gap:34px; flex-wrap:wrap; margin-bottom:18px; }
+    .footer-item h4{ color:var(--accent); margin:0 0 6px; font-size:15px; font-family:"NeueMachina","Sora","Inter",system-ui; }
+    .footer-socials{ display:flex; gap:12px; align-items:center; justify-content:center; margin-top:8px; }
+    .footer-socials a img{ width:22px; height:22px; filter:invert(100%); }
+
+    .hoverStyle a{ color:var(--muted); font-weight:600; }
+    .fade-in-up{ opacity:0; transform: translateY(10px); animation: fadeInUp .7s forwards ease; }
+    @keyframes fadeInUp{ to { opacity:1; transform: translateY(0); } }
+
+    .overlay{ position:fixed; inset:0; z-index:1250; background: rgba(0,0,0,0.45); display:none; opacity:0; transition: opacity .28s var(--ease); -webkit-tap-highlight-color: transparent; }
+    .overlay.visible{ display:block; opacity:1; }
+
+    .sidebar{ position:fixed; top: calc(var(--nav-height) + var(--banner-height)); right:0; bottom:0; width:78%; max-width:420px; min-width:220px; background: var(--panel); color:var(--muted); z-index:1300; display:flex; flex-direction:column; gap:12px; padding:16px; box-sizing:border-box; transform: translateX(100%); transition: transform .36s var(--ease); box-shadow: -6px 0 30px rgba(0,0,0,0.6); border-left:1px solid rgba(255,255,255,0.02); overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; }
+    .sidebar.open{ transform: translateX(0); }
+    .sidebar li{ list-style:none; padding:6px 4px; }
+    .sidebar li a{ display:block; padding:10px 8px; border-radius:8px; color:var(--muted); font-weight:600; }
+    .sidebar li a:hover{ background: rgba(255,255,255,0.02); }
+    .sidebar .close-btn{ background:transparent; border:none; padding:6px; margin:0; display:inline-flex; align-items:center; justify-content:flex-end; cursor:pointer; }
+    .sidebar .close-btn img{ width:26px; height:26px; display:block; }
+    .sidebar .sidebar-socials{ margin-top:auto; display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
+    .sidebar .sidebar-socials .icons{ display:flex; gap:14px; align-items:center; }
+
+    @media (max-width:780px){
+      .contact-grid{ grid-template-columns: 1fr; max-width:640px; }
+      .nav-center{ display:none; }
+      .nav-right .social-icons{ display:none; }
+      .menu-button{ display:flex; }
+    }
+
+    @media (max-width:480px){
+      .hero-text h1{ font-size:36px; }
+      .nav-inner{ padding:10px 12px; }
+      .logo{ width:44px; }
+      .menu-button img{ width:22px; height:22px; }
+      .sidebar{ width:86%; max-width:320px; }
+    }
+
+    section, .section { scroll-margin-top: calc(var(--nav-height) + var(--banner-height) + 12px); }
+
+
+    .brand-logos{
+    display:flex !important;
+    align-items:center !important;
+    gap:8px !important;              
+    }
+
+    /* Normalize logo size & kill transparent padding feel */
+    .brand-logos img{
+    height:38px !important;          /* consistent height */
+    width:auto !important; 
+    display:block !important;
+    object-fit:contain !important;
+    }
+
+
+    .brand-logos img{
+    filter:
+        brightness(0)
+        invert(1)
+        contrast(2)
+        drop-shadow(0 0 6px rgba(255,255,255,0.15)) !important;
+    }
+
+
+    .hero-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    }
+
+    .hero-s-logo{
+    height: 68px;              /* match text height */
+    width: auto;
+    object-fit: contain;
+    filter:
+        brightness(0)
+        invert(1)
+        contrast(2)
+        drop-shadow(0 0 8px rgba(255,255,255,0.2)) !important;
+    }
+
+    .hero-s-logo{
+    height: 72px;
+    margin-right: -20px; /* pulls text closer */
+    }
+
+
+  </style>
 </head>
 <body>
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        <div class="announcement-content">
-            <div class="scrolling-text">
-                Sanket'26 - The Annual Department Event by ECEA, NIT Calicut - 31st January 2026 - Event Registration Now Open!
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-inner">
+    <div class="nav-left">
+    <a href="#home" class="brand-logos">
+        <img src="sanket.png" alt="Sanket Logo">
+        <img src="time.png" alt="TIME Logo">
+        <img src="ecea-logo.png" alt="ECEA Logo">
+        <img src="nitc.png" alt="NIT Calicut Logo">
+    </a>
+    </div>
+      <div class="nav-center">
+        <a class="hideOnMobile hoverStyle" href="#home">Home</a>
+        <a class="hideOnMobile hoverStyle" href="#about">About</a>
+        <a class="hideOnMobile hoverStyle" href="#timeline">Timeline</a>
+        <a class="hideOnMobile hoverStyle" href="#events">Events</a>
+        <a class="hideOnMobile hoverStyle" href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <div class="social-icons hideOnMobile" aria-hidden="false">
+          <a href="https://www.instagram.com/ecea_nitc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/company/ecea-nitc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+          </a>
+        </div>
+        <div class="hideOnMobile">
+          <a href="#events"><button class="button">Register Now</button></a>
+        </div>
+        <div class="menu-button" onclick="showSidebar()" aria-label="Open menu" title="Open menu">
+          <img src="menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" width="26" height="26">
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="announcement-bar" role="status" aria-live="polite">
+    <div class="announcement-inner">
+      <div class="scrolling-text">
+        Sanket'26 - The Annual Department Event by ECEA, NIT Calicut - 31st January 2026 - Event Registration Now Open!
+      </div>
+    </div>
+  </div>
+  <div id="menu-overlay" class="overlay" aria-hidden="true"></div>
+  <ul class="sidebar" id="sidebar" aria-hidden="true" style="display:flex;">
+    <li>
+      <button class="close-btn" aria-label="Close menu" onclick="hideSidebar()">
+        <img src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Close" width="26" height="26">
+      </button>
+    </li>
+    <li><a class="hoverStyle" href="#home">Home</a></li>
+    <li><a class="hoverStyle" href="#about">About</a></li>
+    <li><a class="hoverStyle" href="#timeline">Timeline</a></li>
+    <li><a class="hoverStyle" href="#events">Events</a></li>
+    <li><a class="hoverStyle" href="#contact">Contact</a></li>
+    <li><a href="#events"><button class="button">Register Now</button></a></li>
+    <li class="sidebar-socials">
+      <div class="icons">
+        <a href="https://www.instagram.com/ecea_nitc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" width="28" height="28">
+        </a>
+        <a href="https://www.linkedin.com/company/ecea-nitc/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" width="28" height="28">
+        </a>
+      </div>
+      <small style="color:var(--muted); opacity:0.9;">Follow us</small>
+    </li>
+  </ul>
+  <section class="hero-section" id="home">
+    <div class="hero-text">
+    <h1 class="hero-title">
+    <img src="sanket.png" alt="S Logo" class="hero-s-logo">
+    <span>anket'26</span>
+    </h1> 
+    <h2>Annual Department Event</h2>
+      <h4>Title Sponsor: <strong>T.I.M.E.</strong></h4>
+      <div class="hero-divider"></div>
+      <p class="hero-info"><span class="date">31st January 2026</span> | <span class="location">NIT Calicut</span></p>
+    </div>
+  </section>
+  <div class="background-color">
+    <section class="timeline-section" id="timeline">
+      <h2 class="timeline-heading">Timeline</h2>
+      <div class="timeline-container">
+        <div class="timeline-card fade-in-up">
+          <p class="date">21st January 2026</p>
+          <p class="title">Event Registration Opens</p>
+        </div>
+        <div class="timeline-card fade-in-up">
+          <p class="date">21st January 2026</p>
+          <p class="title">Workshop Details Released</p>
+        </div>
+        <div class="timeline-card fade-in-up">
+          <p class="date">31st January 2026</p>
+          <p class="title">Sanket'26 Event Day</p>
+        </div>
+      </div>
+    </section>
+    <section class="events" id="events">
+    <h2 class="events-title">Upcoming Events</h2>
+
+    <div class="events-container">
+
+        <!-- Event 1 -->
+        <div class="event-card">
+        <div class="event-card-content">
+            <h3 class="event-card-title">
+            C2S: A Sneak Peek into CHIP – Fundamentals of Custom IC Design
+            </h3>
+            <p class="event-card-desc">
+            Get introduced to the fundamentals of custom IC design through the
+            C2S initiative.
+            <br><br>
+            <strong>Mode:</strong> Online (Fri, 30 Jan) & Offline (Sat, 31 Jan) <br>
+            <strong>Venue:</strong> IT Lab Complex <br>
+            <strong>Activity Points:</strong> 6 (NITC students) <br>
+            <strong>KTU Points:</strong> Up to 10 (Non-NITC students)
+            </p>
+            <div style="margin-top:20px; text-align:center;">
+            <a href="forms.gle/hGCB8aj3K3X6BhFu5" target="_blank" rel="noopener noreferrer">
+                <button class="button">Register Now</button>
+            </a>
             </div>
         </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-        <ul class="sidebar" id="sidebar">
-            <li onclick="hideSidebar()">
-                <a href="#">
-                    <img src="close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Close" width="26" height="26">
-                </a>
-            </li>
-            <li><a class="hoverStyle" href="#home">Home</a></li>
-            <li><a class="hoverStyle" href="#about">About</a></li>
-            <li><a class="hoverStyle" href="#timeline">Timeline</a></li>
-            <li><a class="hoverStyle" href="#events">Events</a></li>
-            <!-- <li><a class="hoverStyle" href="#registrations">Registrations</a></li> -->
-            <li><a class="hoverStyle" href="#contact">Contact</a></li>
-            <li><a href="#events"><button class="button">Register Now</button></a></li>
-        </ul>
-        
-        <ul class="navbar">
-            <li>
-                <a href="#home">
-                    <img class="logo" src="ecea-logo.png" alt="ECEA Logo">
-                </a>
-            </li>
-            <li class="hideOnMobile hoverStyle"><a href="#home">Home</a></li>
-            <li class="hideOnMobile hoverStyle"><a href="#about">About</a></li>
-            <li class="hideOnMobile hoverStyle"><a href="#timeline">Timeline</a></li>
-            <li class="hideOnMobile hoverStyle"><a href="#events">Events</a></li>
-            <!-- <li class="hideOnMobile hoverStyle"><a href="#registrations">Registrations</a></li> -->
-            <li class="hideOnMobile hoverStyle"><a href="#contact">Contact</a></li>
-            <li class="hideOnMobile">
-                <a href="#events"><button class="button">Register Now</button></a>
-            </li>
-            <li class="menu-button" onclick="showSidebar()">
-                <a href="#">
-                    <img src="menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" width="26" height="26">
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="hero-text">
-            <h1>Sanket'26</h1>
-            <h2>Annual Department Event</h2>
-            <div class="hero-divider"></div>
-            <p class="hero-info">
-                <span class="date">31st January 2026</span> | 
-                <span class="location">NIT Calicut</span>
-            </p>
         </div>
+
+        <!-- Event 2 -->
+        <div class="event-card">
+        <div class="event-card-content">
+            <h3 class="event-card-title">
+            Tinkering with Arduino
+            </h3>
+            <p class="event-card-desc">
+            Hands-on workshop focused on Arduino basics and practical tinkering.
+            <br><br>
+            <strong>Mode:</strong> Online (Thu & Fri, 29–30 Jan) & Offline (Sat, 31 Jan) <br>
+            <strong>Venue:</strong> ELHC <br>
+            <strong>Activity Points:</strong> 6 (NITC students) <br>
+            <strong>KTU Points:</strong> Up to 10 (Non-NITC students)
+            </p>
+            <div style="margin-top:20px; text-align:center;">
+            <a href="forms.gle/nDSr81ncnH5qVvSS7" target="_blank" rel="noopener noreferrer">
+                <button class="button">Register Now</button>
+            </a>
+        </div>
+        </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="event-card">
+        <div class="event-card-content">
+            <h3 class="event-card-title">
+            Leveraging LLMs for Literature Review
+            </h3>
+            <p class="event-card-desc">
+            Learn how to effectively use Large Language Models to speed up and
+            improve academic literature reviews.
+            <br><br>
+            <strong>Date:</strong> Friday, 31 Jan <br>
+            <strong>Venue:</strong> ECED Block 2 Seminar Hall <br>
+            <strong>Activity Points:</strong> 4 (NITC students) <br>
+            <strong>KTU Points:</strong> 10 (Non-NITC students)
+            </p>
+            <div style="margin-top:20px; text-align:center;">
+            <a href="https://forms.gle/rC1ieFUSKcdV9vmt8" target="_blank" rel="noopener noreferrer">
+                <button class="button">Register Now</button>
+            </a>
+        </div>
+        </div>
+        </div>
+
+    </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="background-color">
-        <!-- Timeline Section -->
-        <section class="timeline-section" id="timeline">
-            <h2 class="timeline-heading">Timeline</h2>
-            <div class="timeline-container">
-                <div class="timeline-card fade-in-up">
-                    <p class="date">21st January 2026</p>
-                    <p class="title">Event Registration Opens</p>
-                </div>
-                <div class="timeline-card fade-in-up">
-                    <p class="date">21st January 2026</p>
-                    <p class="title">Workshop Details Released</p>
-                </div>
-                <div class="timeline-card fade-in-up">
-                    <p class="date">31st January 2026</p>
-                    <p class="title">Sanket'26 Event Day</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Events Section -->
-        <section class="events" id="events">
-            <h2 class="events-title">Upcoming Events</h2>
-            <div class="events-container">
-                <!-- C2S Workshop Event Card -->
-                <div class="event-card">
-                    <div class="event-card-content">
-                        <h3 class="event-card-title">C2S Workshop</h3>
-                        <p class="event-card-desc">
-                            Join us for an exciting C2S (Circuit to System) Workshop as part of Sanket'26. 
-                            Learn hands-on skills and explore cutting-edge technologies in electronics and communication.
-                        </p>
-                        <div style="margin-top: 20px; text-align: center;">
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScDHxsSEwhLaxl59yWxayHe93X3Lu5XhT9hX_09r9lDtZIDPQ/viewform" target="_blank" rel="noopener noreferrer">
-                                <button class="button">Register Now</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Registrations Section -->
-        <!-- <section class="registrations" id="registrations">
-            <h2 class="registrations-title">Registrations</h2>
-            <div class="registration-info">
-                <h3>Registration Details Coming Soon!</h3>
-                <p>
-                    Registration for Sanket'26 will open soon. Stay tuned for updates on:
-                </p>
-                <ul>
-                    <li>Workshop details and schedule</li>
-                    <li>Competition information</li>
-                    <li>Guest lectures and keynote sessions</li>
-                    <li>Registration fees and early bird offers</li>
-                </ul>
-                <p style="margin-top: 30px;">
-                    For any queries or information, please contact the ECEA team at NIT Calicut.
-                </p>
-            </div>
-        </section> -->
-
-        <!-- About Sanket Section -->
-        <section class="section" id="about">
-            <div class="section-header">
-                <p class="section-subtitle">About</p>
-                <h2 class="section-title">Sanket'26<br>Annual Department Event</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        <em>Sanket'26</em> is the annual department event organized by the Electronics and 
-                        Communication Engineering Association (ECEA) at NIT Calicut. This flagship event brings 
-                        together students, faculty, and industry professionals to celebrate innovation, creativity, 
-                        and technical excellence in the field of electronics and communication engineering.
-                    </p>
-                    <p>
-                        The event features a diverse range of activities including technical workshops, competitive 
-                        events, guest lectures by industry experts, and interactive sessions. Sanket provides a platform 
-                        for students to showcase their technical skills, learn about emerging technologies, and network 
-                        with peers and professionals from the industry.
-                    </p>
-                    <p>
-                        With its focus on hands-on learning and practical applications, Sanket'26 aims to inspire the 
-                        next generation of engineers and innovators, fostering a culture of technical excellence and 
-                        collaborative growth within the ECE community at NIT Calicut.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <div class="about-divider"></div>
-
-        <!-- About ECEA Section -->
-        <section class="section">
-            <div class="section-header">
-                <p class="section-subtitle">About</p>
-                <h2 class="section-title">ECEA, NIT Calicut</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image-container">
-                    <img src="ecea-logo.png" alt="ECEA Logo">
-                </div>
-                <div class="about-text">
-                    <p>
-                        The <em>Electronics and Communication Engineering Association (ECEA)</em> is the official 
-                        departmental association of the ECE Department at NIT Calicut. ECEA serves as a vibrant 
-                        platform for students to engage in technical, cultural, and professional activities throughout 
-                        the academic year.
-                    </p>
-                    <p>
-                        ECEA organizes various events including technical workshops, coding competitions, hackathons, 
-                        guest lectures by industry experts, and the annual department event - Sanket. The association 
-                        plays a crucial role in bridging the gap between academic learning and practical industry 
-                        requirements, providing students with opportunities to enhance their technical skills and 
-                        professional development.
-                    </p>
-                    <p>
-                        Through its diverse initiatives and events, ECEA fosters a culture of innovation, collaboration, 
-                        and excellence within the ECE community at NIT Calicut, preparing students for successful careers 
-                        in the rapidly evolving field of electronics and communication engineering.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <div class="about-divider"></div>
-
-        <!-- About NIT Calicut Section -->
-        <section class="section">
-            <div class="section-header">
-                <p class="section-subtitle">Our Host</p>
-                <h2 class="section-title">NIT Calicut</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        The <em>National Institute of Technology Calicut (NITC)</em> is an <em>Institute of National 
-                        Importance</em> and one of India's leading institutions in engineering, technology, architecture, 
-                        and management education. In the NIRF 2025 rankings, <em>NIT Calicut was placed 21st in 
-                        Engineering</em>, reaffirming its stature among the top engineering institutions in the country.
-                    </p>
-                    <p>
-                        The <em>Department of Electronics and Communication Engineering</em> at NIT Calicut is one of 
-                        the premier departments, known for its excellence in teaching, research, and innovation. The 
-                        department offers undergraduate, postgraduate, and doctoral programs, with state-of-the-art 
-                        laboratories and research facilities. Faculty members are actively involved in cutting-edge 
-                        research in areas such as VLSI design, wireless communications, signal processing, embedded 
-                        systems, and artificial intelligence.
-                    </p>
-                    <p>
-                        The ECE department has a strong focus on industry collaboration and practical learning, regularly 
-                        organizing workshops, seminars, and technical events through ECEA to ensure students are 
-                        well-prepared for the challenges of the modern technology landscape.
-                    </p>
-                </div>
-                <div class="about-image-container">
-                    <img src="admin-block.webp" alt="NIT Calicut Admin Block">
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <div class="section-header">
-                <h2 class="section-title">Contact Details</h2>
-                <p class="section-subtitle">Get In Touch With Us</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h4>Location</h4>
-                    <p>National Institute of Technology, Calicut</p>
-                    <p>NIT Campus P.O 673601</p>
-                    <p>Kozhikode, Kerala</p>
-                </div>
-                
-                <div class="contact-card">
-                    <h4>Contact - Sai</h4>
-                    <p>Phone: <a href="tel:+918089370282">8089370282</a></p>
-                </div>
-                
-                <div class="contact-card">
-                    <h4>Contact - Sabin</h4>
-                    <p>Phone: <a href="tel:+919446978544">9446978544</a></p>
-                </div>
-                
-                <div class="contact-card">
-                    <h4>Email</h4>
-                    <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
-                </div>
-                
-                <div class="contact-card">
-                    <h4>Nearest Railway</h4>
-                    <p>Kozhikode - 27 KM</p>
-                </div>
-                
-                <div class="contact-card">
-                    <h4>Nearest Airport</h4>
-                    <p>Calicut International Airport - 27 KM</p>
-                </div>
-            </div>
-            
-            <div class="map-container">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4895.318018097805!2d75.93115761146314!3d11.321607048853092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba642fd50000001%3A0xbe8a77db953bda6c!2sNIT%20Calicut!5e1!3m2!1sen!2sin!4v1769152294010!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-divider"></div>
-            
-            <div class="footer-content">
-                <div class="footer-item">
-                    <h4>Contact - Sai</h4>
-                    <p><a href="tel:+918089370282">8089370282</a></p>
-                </div>
-                
-                <div class="footer-item">
-                    <h4>Contact - Sabin</h4>
-                    <p><a href="tel:+919446978544">9446978544</a></p>
-                </div>
-                
-                <div class="footer-item">
-                    <h4>Email</h4>
-                    <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
-                </div>
-            </div>
-            
-            <p class="copyright">© Copyright 2026 ECEA, NIT Calicut. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        function showSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.style.display = 'flex';
+    <section class="section" id="about">
+      <div class="section-header">
+        <p class="section-subtitle">About</p>
+        <h2 class="section-title">Sanket'26<br>Annual Department Event</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p><em>Sanket'26</em> is the annual department event organized by the Electronics and Communication Engineering Association (ECEA) at NIT Calicut. This flagship event brings together students, faculty, and industry professionals to celebrate innovation, creativity, and technical excellence in the field of electronics and communication engineering.</p>
+          <p>The event features a diverse range of activities including technical workshops, competitive events, guest lectures by industry experts, and interactive sessions. Sanket provides a platform for students to showcase their technical skills, learn about emerging technologies, and network with peers and professionals from the industry.</p>
+          <p>With its focus on hands-on learning and practical applications, Sanket'26 aims to inspire the next generation of engineers and innovators, fostering a culture of technical excellence and collaborative growth within the ECE community at NIT Calicut.</p>
+        </div>
+      </div>
+    </section>
+    <div class="about-divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <p class="section-subtitle">About</p>
+        <h2 class="section-title">ECEA, NIT Calicut</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-image-container">
+          <img src="ecea-logo.png" alt="ECEA Logo">
+        </div>
+        <div class="about-text">
+          <p>The <em>Electronics and Communication Engineering Association (ECEA)</em> is the official departmental association of the ECE Department at NIT Calicut. ECEA serves as a vibrant platform for students to engage in technical, cultural, and professional activities throughout the academic year.</p>
+          <p>ECEA organizes various events including technical workshops, coding competitions, hackathons, guest lectures by industry experts, and the annual department event - Sanket. The association plays a crucial role in bridging the gap between academic learning and practical industry requirements, providing students with opportunities to enhance their technical skills and professional development.</p>
+          <p>Through its diverse initiatives and events, ECEA fosters a culture of innovation, collaboration, and excellence within the ECE community at NIT Calicut, preparing students for successful careers in the rapidly evolving field of electronics and communication engineering.</p>
+        </div>
+      </div>
+    </section>
+    <div class="about-divider"></div>
+    <section class="section">
+      <div class="section-header">
+        <p class="section-subtitle">Our Host</p>
+        <h2 class="section-title">NIT Calicut</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>The <em>National Institute of Technology Calicut (NITC)</em> is an <em>Institute of National Importance</em> and one of India's leading institutions in engineering, technology, architecture, and management education. In the NIRF 2025 rankings, <em>NIT Calicut was placed 21st in Engineering</em>, reaffirming its stature among the top engineering institutions in the country.</p>
+          <p>The <em>Department of Electronics and Communication Engineering</em> at NIT Calicut is one of the premier departments, known for its excellence in teaching, research, and innovation. The department offers undergraduate, postgraduate, and doctoral programs, with state-of-the-art laboratories and research facilities. Faculty members are actively involved in cutting-edge research in areas such as VLSI design, wireless communications, signal processing, embedded systems, and artificial intelligence.</p>
+          <p>The ECE department has a strong focus on industry collaboration and practical learning, regularly organizing workshops, seminars, and technical events through ECEA to ensure students are well-prepared for the challenges of the modern technology landscape.</p>
+        </div>
+        <div class="about-image-container">
+          <img src="admin-block.webp" alt="NIT Calicut Admin Block">
+        </div>
+      </div>
+    </section>
+    <section class="contact-section" id="contact">
+      <div class="section-header">
+        <h2 class="section-title">Contact Details</h2>
+        <p class="section-subtitle">Get In Touch With Us</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>Location</h4>
+          <p>National Institute of Technology, Calicut</p>
+          <p>NIT Campus P.O 673601</p>
+          <p>Kozhikode, Kerala</p>
+        </div>
+        <div class="contact-card">
+          <h4>Contact - Sai</h4>
+          <p>Phone: <a href="tel:+918089370282">8089370282</a></p>
+        </div>
+        <div class="contact-card">
+          <h4>Contact - Sabin</h4>
+          <p>Phone: <a href="tel:+919446978544">9446978544</a></p>
+        </div>
+        <div class="contact-card">
+          <h4>Email</h4>
+          <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
+        </div>
+        <div class="contact-card">
+          <h4>Nearest Railway</h4>
+          <p>Kozhikode - 27 KM</p>
+        </div>
+        <div class="contact-card">
+          <h4>Nearest Airport</h4>
+          <p>Calicut International Airport - 27 KM</p>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4895.318018097805!2d75.93115761146314!3d11.321607048853092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba642fd50000001%3A0xbe8a77db953bda6c!2sNIT%20Calicut!5e1!3m2!1sen!2sin!4v1769152294010!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-divider"></div>
+      <div class="footer-content">
+        <div class="footer-item">
+          <h4>Contact - Sai</h4>
+          <p><a href="tel:+918089370282">8089370282</a></p>
+        </div>
+        <div class="footer-item">
+          <h4>Contact - Sabin</h4>
+          <p><a href="tel:+919446978544">9446978544</a></p>
+        </div>
+        <div class="footer-item">
+          <h4>Email</h4>
+          <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
+        </div>
+      </div>
+      <div class="footer-socials" style="margin-bottom:12px;">
+        <a href="https://www.instagram.com/ecea_nitc/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/company/ecea-nitc/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+      </div>
+      <p class="copyright">© Copyright 2026 ECEA, NIT Calicut. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('menu-overlay');
+    const menuButton = document.querySelector('.menu-button');
+    const ANIM_MS = 360;
+    (function initSidebarState(){
+      sidebar.classList.remove('open');
+      sidebar.setAttribute('aria-hidden','true');
+      sidebar.style.display = 'none';
+      overlay.classList.remove('visible');
+      overlay.setAttribute('aria-hidden','true');
+    })();
+    function showSidebar(){
+      sidebar.style.display = 'flex';
+      requestAnimationFrame(() => {
+        overlay.classList.add('visible');
+        overlay.setAttribute('aria-hidden','false');
+        sidebar.classList.add('open');
+        sidebar.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+    function hideSidebar(){
+      sidebar.classList.remove('open');
+      overlay.classList.remove('visible');
+      overlay.setAttribute('aria-hidden','true');
+      sidebar.setAttribute('aria-hidden','true');
+      setTimeout(()=>{
+        sidebar.style.display = 'none';
+        document.body.style.overflow = '';
+      }, ANIM_MS + 20);
+    }
+    overlay.addEventListener('click', function () { hideSidebar(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (sidebar.classList.contains('open')) hideSidebar();
+      }
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href) return;
+        if (href === '#') {
+          e.preventDefault();
+          return;
         }
-
-        function hideSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.style.display = 'none';
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+          if (sidebar.classList.contains('open')) hideSidebar();
         }
-
-        // Close sidebar when clicking outside
-        document.addEventListener('click', function(event) {
-            const sidebar = document.getElementById('sidebar');
-            const menuButton = document.querySelector('.menu-button');
-            
-            if (!sidebar.contains(event.target) && !menuButton.contains(event.target)) {
-                sidebar.style.display = 'none';
-            }
-        });
-
-        // Add scroll effect to navbar
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close sidebar if open
-                    hideSidebar();
-                }
-            });
-        });
-    </script>
+      });
+    });
+    window.addEventListener('scroll', function(){
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 8) navbar.style.boxShadow = '0 16px 40px rgba(0,0,0,0.75)';
+      else navbar.style.boxShadow = 'var(--shadow)';
+    });
+    window.addEventListener('resize', function() {
+      const w = window.innerWidth;
+      if (w > 780) {
+        sidebar.classList.remove('open');
+        sidebar.style.display = 'none';
+        overlay.classList.remove('visible');
+        overlay.setAttribute('aria-hidden','true');
+        sidebar.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+    });
+    window.showSidebar = showSidebar;
+    window.hideSidebar = hideSidebar;
+  </script>
 </body>
 </html>
