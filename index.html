@@ -255,6 +255,30 @@
     }
 
 
+    .hero-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    }
+
+    .hero-s-logo{
+    height: 68px;              /* match text height */
+    width: auto;
+    object-fit: contain;
+    filter:
+        brightness(0)
+        invert(1)
+        contrast(2)
+        drop-shadow(0 0 8px rgba(255,255,255,0.2)) !important;
+    }
+
+    .hero-s-logo{
+    height: 72px;
+    margin-right: -20px; /* pulls text closer */
+    }
+
+
   </style>
 </head>
 <body>
@@ -327,8 +351,11 @@
   </ul>
   <section class="hero-section" id="home">
     <div class="hero-text">
-      <h1>Sanket'26</h1>
-      <h2>Annual Department Event</h2>
+    <h1 class="hero-title">
+    <img src="sanket.png" alt="S Logo" class="hero-s-logo">
+    <span>anket'26</span>
+    </h1> 
+    <h2>Annual Department Event</h2>
       <h4>Title Sponsor: <strong>T.I.M.E.</strong></h4>
       <div class="hero-divider"></div>
       <p class="hero-info"><span class="date">31st January 2026</span> | <span class="location">NIT Calicut</span></p>
