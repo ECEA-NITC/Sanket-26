@@ -303,7 +303,6 @@ background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-animation: pulse 4s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -326,7 +325,6 @@ background: linear-gradient(135deg, #FFFFFF 0%, #B8B8B8 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
-animation: glow-pulse 3s ease-in-out infinite;
 }
 
 @keyframes glow-pulse {
@@ -365,6 +363,39 @@ color: var(--primary-orange);
 color: var(--text-white);
 opacity: 0.9;
 }
+
+
+.hero-section{
+  position:relative;
+  overflow:hidden;
+  min-height:420px;
+  height:clamp(420px, 70svh, 720px);
+}
+
+.hero-section::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:url("antenna.png");
+  background-repeat:no-repeat;
+  background-position:50% 50%;
+  background-size:520px;
+
+  filter:invert(1) brightness(1.15) contrast(1.1);
+  opacity:0.08;
+
+  pointer-events:none;
+  z-index:1;
+}
+
+
+.hero-text{
+  position:relative;
+  z-index:1;
+}
+
+
 
 /* ============================================
 SECTION STYLES
