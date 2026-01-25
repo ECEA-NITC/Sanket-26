@@ -5,36 +5,70 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Sanket'26 - The Annual Department Event by ECEA, NIT Calicut">
   <title>Sanket'26 - ECEA NITC</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="ecea-logo.png">
-
-  <!-- External stylesheet (kept as original) -->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- Inline CSS adjustments requested -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* NeueMachina headers - local files (woff preferred, otf fallback) */
+    @font-face{
+      font-family: "NeueMachina";
+      src: url("./neue-machina/NeueMachina-Regular.woff") format("woff"),
+           url("./neue-machina/NeueMachina-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face{
+      font-family: "NeueMachina";
+      src: url("./neue-machina/NeueMachina-Ultrabold.woff") format("woff"),
+           url("./neue-machina/NeueMachina-Ultrabold.otf") format("opentype");
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face{
+      font-family: "NeueMachina";
+      src: url("./neue-machina/NeueMachina-Light.woff") format("woff"),
+           url("./neue-machina/NeueMachina-Light.otf") format("opentype");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root{
       --bg:#0b0b0b;
       --panel:#0f0f0f;
       --muted:#bfbfbf;
       --accent:#ffffff;
-      --nav-height:72px;      /* navbar fixed height */
-      --banner-height:44px;   /* announcement/banner height */
+      --nav-height:72px;
+      --banner-height:44px;
       --maxwidth:1200px;
       --ease: cubic-bezier(.2,.9,.25,1);
       --shadow: 0 10px 40px rgba(0,0,0,0.7);
     }
 
-    /* base */
-    html,body{ height:100%; margin:0; font-family:"Poppins",system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: linear-gradient(180deg,#070707 0%, #0d0d0d 45%, #0b0b0b 100%); color:var(--muted); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.45; }
+    /* base (body text uses Sora then Inter as requested) */
+    html,body{ height:100%; margin:0; font-family:"Sora","Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background: linear-gradient(180deg,#070707 0%, #0d0d0d 45%, #0b0b0b 100%); color:var(--muted); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.45; }
     a{ color:inherit; text-decoration:none; }
     img{ display:block; max-width:100%; height:auto; }
+
+    /* ensure headings use NeueMachina (headers etc) */
+    h1,h2,h3,h4,h5,h6,
+    .section-title,
+    .timeline-heading,
+    .events-title,
+    .event-card-title,
+    .hero-text h1,
+    .hero-text h2,
+    .timeline-card .title,
+    .contact-card h4,
+    .footer-item h4{
+      font-family: "NeueMachina","Sora","Inter",system-ui;
+      letter-spacing: normal;
+      margin:0;
+    }
 
     /* IMPORTANT: reserve space so fixed navbar + banner do not overlap content */
     body { padding-top: calc(var(--nav-height) + var(--banner-height) + 24px); }
@@ -47,7 +81,7 @@
       right:0;
       height:var(--nav-height);
       z-index:1200;
-      background: rgba(6,6,6,0.96); /* dark BW look */
+      background: rgba(6,6,6,0.96);
       border-bottom: 1px solid rgba(255,255,255,0.03);
       backdrop-filter: blur(8px) saturate(110%);
       box-shadow: var(--shadow);
@@ -56,7 +90,6 @@
       justify-content:center;
     }
 
-    /* inner container to keep content centered and not compressed */
     .nav-inner{
       max-width:var(--maxwidth);
       width:100%;
@@ -68,24 +101,19 @@
       box-sizing:border-box;
     }
 
-    .nav-left, .nav-center, .nav-right{ display:flex; align-items:center; gap:12px; }
-
+    .nav-left,.nav-center,.nav-right{ display:flex; align-items:center; gap:12px; }
     .logo{ width:54px; height:auto; display:block; object-fit:contain; }
-
     .nav-center{ gap:18px; }
     .nav-center a{ padding:8px 12px; border-radius:8px; font-weight:600; color:var(--muted); font-size:15px; }
     .nav-center a:hover{ background:rgba(255,255,255,0.02); }
-
     .nav-right{ margin-left:auto; gap:12px; align-items:center; }
     .nav-right .button{ padding:9px 14px; border-radius:10px; border:1.4px solid rgba(255,255,255,0.08); font-weight:700; }
 
-    /* social icons in navbar */
     .social-icons{ display:flex; gap:10px; align-items:center; }
     .social-icons a img{ width:22px; height:22px; filter:invert(100%); display:block; }
 
     .menu-button{ display:none; align-items:center; justify-content:center; padding:6px; border-radius:10px; cursor:pointer; background:transparent; }
 
-    /* ANNOUNCEMENT BANNER (fixed and attached directly below navbar) */
     .announcement-bar{
       position:fixed;
       top:var(--nav-height);
@@ -93,7 +121,7 @@
       right:0;
       height:var(--banner-height);
       z-index:1100;
-      background: #ffffff;            /* ensure strong contrast so text is visible */
+      background: #ffffff;
       border-bottom: 1px solid rgba(255,255,255,0.03);
       display:flex;
       align-items:center;
@@ -109,44 +137,28 @@
       align-items:center;
       justify-content:center;
     }
-    .announcement-inner .scrolling-text{
-      color: #000 !important; /* forced white so it's visible */
-      font-weight:600;
-      font-size:14px;
-      white-space:nowrap;
-      overflow:hidden;
-      box-sizing:border-box;
-      text-shadow: none; 
-    }
-    .scrolling-text::after{ content:' '; padding-left:60px; }
-    @keyframes marquee { 0%{ transform: translateX(100%); } 100%{ transform: translateX(-100%); } }
-    .scrolling-text{ display:inline-block; animation:marquee 18s linear infinite; }
-
-
-
-    .announcement-bar .announcement-inner .scrolling-text {
+    .announcement-bar .announcement-inner .scrolling-text{
     all: unset;
     display: inline-block;
     color: #000;
-    font-family: "Poppins", system-ui, sans-serif;
+    font-family: "Sora","Inter",system-ui;
     font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
     animation: marquee 18s linear infinite;
     }
+    .scrolling-text::after{ content:' '; padding-left:60px; }
+    @keyframes marquee { 0%{ transform: translateX(100%); } 100%{ transform: translateX(-100%); } }
+    .scrolling-text{ display:inline-block; animation:marquee 18s linear infinite; }
 
-
-    /* HERO */
     .hero-section{ display:flex; align-items:center; justify-content:center; height:70vh; min-height:420px; max-width:1400px; margin:24px auto; text-align:center; padding:24px; position:relative; }
     .hero-text h1{ font-size:64px; margin:0; color:var(--accent); letter-spacing:-1px; line-height:0.95; text-shadow: 0 10px 30px rgba(0,0,0,0.85); }
-    .hero-text h2{ font-weight:600; margin:10px 0 6px 0; color:var(--muted); font-size:20px; }
+    .hero-text h2{ font-weight:600; margin:10px 0 6px 0; color:var(--muted); font-size:20px; font-family:"NeueMachina","Sora","Inter",system-ui; }
     .hero-divider{ height:2px; width:120px; background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02)); margin:18px auto; border-radius:4px; }
     .hero-info{ color:var(--muted); font-weight:500; font-size:15px; letter-spacing:.2px; }
 
-    /* main container */
     .background-color{ max-width:var(--maxwidth); margin:0 auto 80px; padding:10px 22px 60px; box-sizing:border-box; }
 
-    /* sections & timeline */
     .timeline-section{ margin-top:16px; text-align:center; }
     .timeline-heading{ color:var(--accent); font-size:28px; margin-bottom:18px; font-weight:800; letter-spacing:.4px; }
     .timeline-container{ display:flex; gap:18px; justify-content:center; align-items:stretch; flex-wrap:wrap; padding:18px; margin:0 auto; max-width:1000px; }
@@ -155,124 +167,56 @@
     .timeline-card .date{ color:var(--muted); font-weight:700; margin-bottom:8px; }
     .timeline-card .title{ color:var(--accent); font-weight:800; font-size:16px; }
 
-    /* events and about */
     .events-title{ color:var(--accent); margin-top:40px; font-size:24px; text-align:center; font-weight:800; }
     .events-container{ display:flex; justify-content:center; gap:20px; padding:22px; flex-wrap:wrap; }
     .event-card{ width:360px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015)); border-radius:12px; padding:18px; border:1px solid rgba(255,255,255,0.03); box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
-    .event-card-title{ color:var(--accent); margin:0 0 6px; font-weight:800; font-size:18px; }
+    .event-card-title{ color:var(--accent); margin:0 0 6px; font-weight:800; font-size:18px; font-family:"NeueMachina","Sora","Inter",system-ui; }
     .event-card-desc{ color:var(--muted); font-size:14px; }
 
     .section{ margin-top:40px; padding:18px 8px; }
     .section-header{ text-align:left; margin-bottom:18px; }
     .section-subtitle{ color:var(--muted); font-weight:600; margin:0; font-size:14px; }
-    .section-title{ color:var(--accent); margin:6px 0 0; font-weight:800; font-size:22px; }
+    .section-title{ color:var(--accent); margin:6px 0 0; font-weight:800; font-size:22px; font-family:"NeueMachina","Sora","Inter",system-ui; }
     .about-content{ display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
     .about-text{ flex:1 1 420px; color:var(--muted); }
     .about-image-container img{ width:180px; height:auto; display:block; }
 
     .about-divider{ height:1px; width:100%; background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent); margin:30px 0; }
 
-    /* CONTACT GRID: force 2 columns x 3 rows on wide screens (user requested 2x3) */
-    .contact-grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(280px, 1fr)); /* always two columns on >=700px */
-      gap:18px;
-      margin-top:18px;
-      justify-items:stretch;
-      align-items:stretch;
-      max-width:900px;
-      margin-left:auto;
-      margin-right:auto;
-    }
+    .contact-grid{ display:grid; grid-template-columns: repeat(2, minmax(280px, 1fr)); gap:18px; margin-top:18px; justify-items:stretch; align-items:stretch; max-width:900px; margin-left:auto; margin-right:auto; }
     .contact-card{ background:var(--panel); border-radius:12px; padding:16px; border:1px solid rgba(255,255,255,0.02); box-shadow: 0 8px 40px rgba(0,0,0,0.5); color:var(--muted); }
-    .contact-card h4{ color:var(--accent); margin:0 0 6px; font-size:15px; }
+    .contact-card h4{ color:var(--accent); margin:0 0 6px; font-size:15px; font-family:"NeueMachina","Sora","Inter",system-ui; }
     .map-container{ margin-top:18px; display:flex; justify-content:center; }
     .map-container iframe{ max-width:100%; border-radius:12px; border:1px solid rgba(255,255,255,0.03); }
 
-    /* footer */
     footer{ margin-top:36px; color:var(--muted); padding:26px 12px 36px; text-align:center; }
     .footer-divider{ height:1px; width:70%; margin:0 auto 20px; background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); }
     .footer-content{ display:flex; justify-content:center; gap:34px; flex-wrap:wrap; margin-bottom:18px; }
-    .footer-item h4{ color:var(--accent); margin:0 0 6px; font-size:15px; }
+    .footer-item h4{ color:var(--accent); margin:0 0 6px; font-size:15px; font-family:"NeueMachina","Sora","Inter",system-ui; }
     .footer-socials{ display:flex; gap:12px; align-items:center; justify-content:center; margin-top:8px; }
     .footer-socials a img{ width:22px; height:22px; filter:invert(100%); }
 
-    /* small polish & responsive tweaks */
     .hoverStyle a{ color:var(--muted); font-weight:600; }
     .fade-in-up{ opacity:0; transform: translateY(10px); animation: fadeInUp .7s forwards ease; }
     @keyframes fadeInUp{ to { opacity:1; transform: translateY(0); } }
 
-    /* Mobile sidebar & overlay */
-    .overlay{
-      position:fixed;
-      inset:0;
-      z-index:1250;
-      background: rgba(0,0,0,0.45);
-      display:none;
-      opacity:0;
-      transition: opacity .28s var(--ease);
-      -webkit-tap-highlight-color: transparent;
-    }
+    .overlay{ position:fixed; inset:0; z-index:1250; background: rgba(0,0,0,0.45); display:none; opacity:0; transition: opacity .28s var(--ease); -webkit-tap-highlight-color: transparent; }
     .overlay.visible{ display:block; opacity:1; }
 
-    .sidebar{
-      position:fixed;
-      top: calc(var(--nav-height) + var(--banner-height));
-      right:0;
-      bottom:0;
-      width:78%;
-      max-width:420px;
-      min-width:220px;
-      background: var(--panel);
-      color:var(--muted);
-      z-index:1300;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      padding:16px;
-      box-sizing:border-box;
-      transform: translateX(100%);
-      transition: transform .36s var(--ease);
-      box-shadow: -6px 0 30px rgba(0,0,0,0.6);
-      border-left:1px solid rgba(255,255,255,0.02);
-      overscroll-behavior-y: contain;
-      -webkit-overflow-scrolling: touch;
-    }
+    .sidebar{ position:fixed; top: calc(var(--nav-height) + var(--banner-height)); right:0; bottom:0; width:78%; max-width:420px; min-width:220px; background: var(--panel); color:var(--muted); z-index:1300; display:flex; flex-direction:column; gap:12px; padding:16px; box-sizing:border-box; transform: translateX(100%); transition: transform .36s var(--ease); box-shadow: -6px 0 30px rgba(0,0,0,0.6); border-left:1px solid rgba(255,255,255,0.02); overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; }
     .sidebar.open{ transform: translateX(0); }
-
-    /* sidebar content styles */
     .sidebar li{ list-style:none; padding:6px 4px; }
     .sidebar li a{ display:block; padding:10px 8px; border-radius:8px; color:var(--muted); font-weight:600; }
     .sidebar li a:hover{ background: rgba(255,255,255,0.02); }
-    .sidebar .close-btn{
-      background:transparent;
-      border:none;
-      padding:6px;
-      margin:0;
-      display:inline-flex;
-      align-items:center;
-      justify-content:flex-end;
-      cursor:pointer;
-    }
+    .sidebar .close-btn{ background:transparent; border:none; padding:6px; margin:0; display:inline-flex; align-items:center; justify-content:flex-end; cursor:pointer; }
     .sidebar .close-btn img{ width:26px; height:26px; display:block; }
-
-    /* place social block fixed at bottom inside sidebar */
-    .sidebar .sidebar-socials{
-      margin-top:auto;
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      align-items:flex-start;
-    }
+    .sidebar .sidebar-socials{ margin-top:auto; display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
     .sidebar .sidebar-socials .icons{ display:flex; gap:14px; align-items:center; }
 
-    /* small polish & responsive tweaks */
-    /* responsive: collapse contact grid to 1 column on small screens */
     @media (max-width:780px){
       .contact-grid{ grid-template-columns: 1fr; max-width:640px; }
-      .nav-center{ display:none; } /* hide center nav links, show mobile menu */
+      .nav-center{ display:none; }
       .nav-right .social-icons{ display:none; }
-      /* show hamburger menu only on mobile */
       .menu-button{ display:flex; }
     }
 
@@ -284,27 +228,22 @@
       .sidebar{ width:86%; max-width:320px; }
     }
 
-    /* ensure anchor navigation leaves space below fixed header + banner */
     section, .section { scroll-margin-top: calc(var(--nav-height) + var(--banner-height) + 12px); }
   </style>
 </head>
 <body>
-  <!-- NAVBAR (fixed at top) -->
   <nav id="navbar" role="navigation" aria-label="Main Navigation">
     <div class="nav-inner">
       <div class="nav-left">
         <a href="#home"><img class="logo" src="ecea-logo.png" alt="ECEA Logo"></a>
       </div>
-
       <div class="nav-center">
         <a class="hideOnMobile hoverStyle" href="#home">Home</a>
         <a class="hideOnMobile hoverStyle" href="#about">About</a>
         <a class="hideOnMobile hoverStyle" href="#timeline">Timeline</a>
         <a class="hideOnMobile hoverStyle" href="#events">Events</a>
-        <!-- <a class="hideOnMobile hoverStyle" href="#registrations">Registrations</a> -->
         <a class="hideOnMobile hoverStyle" href="#contact">Contact</a>
       </div>
-
       <div class="nav-right">
         <div class="social-icons hideOnMobile" aria-hidden="false">
           <a href="https://www.instagram.com/ecea_nitc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -314,19 +253,15 @@
             <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
           </a>
         </div>
-
         <div class="hideOnMobile">
           <a href="#events"><button class="button">Register Now</button></a>
         </div>
-
         <div class="menu-button" onclick="showSidebar()" aria-label="Open menu" title="Open menu">
           <img src="menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Menu" width="26" height="26">
         </div>
       </div>
     </div>
   </nav>
-
-  <!-- Announcement banner attached directly below navbar (fixed) -->
   <div class="announcement-bar" role="status" aria-live="polite">
     <div class="announcement-inner">
       <div class="scrolling-text">
@@ -334,11 +269,7 @@
       </div>
     </div>
   </div>
-
-  <!-- Overlay for mobile menu (click to close) -->
   <div id="menu-overlay" class="overlay" aria-hidden="true"></div>
-
-  <!-- Sidebar (mobile menu) -->
   <ul class="sidebar" id="sidebar" aria-hidden="true" style="display:flex;">
     <li>
       <button class="close-btn" aria-label="Close menu" onclick="hideSidebar()">
@@ -349,11 +280,8 @@
     <li><a class="hoverStyle" href="#about">About</a></li>
     <li><a class="hoverStyle" href="#timeline">Timeline</a></li>
     <li><a class="hoverStyle" href="#events">Events</a></li>
-    <!-- <li><a class="hoverStyle" href="#registrations">Registrations</a></li> -->
     <li><a class="hoverStyle" href="#contact">Contact</a></li>
     <li><a href="#events"><button class="button">Register Now</button></a></li>
-
-    <!-- Social icons visible inside sidebar when opened -->
     <li class="sidebar-socials">
       <div class="icons">
         <a href="https://www.instagram.com/ecea_nitc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -366,8 +294,6 @@
       <small style="color:var(--muted); opacity:0.9;">Follow us</small>
     </li>
   </ul>
-
-  <!-- Hero Section -->
   <section class="hero-section" id="home">
     <div class="hero-text">
       <h1>Sanket'26</h1>
@@ -376,10 +302,7 @@
       <p class="hero-info"><span class="date">31st January 2026</span> | <span class="location">NIT Calicut</span></p>
     </div>
   </section>
-
-  <!-- Main content -->
   <div class="background-color">
-    <!-- Timeline -->
     <section class="timeline-section" id="timeline">
       <h2 class="timeline-heading">Timeline</h2>
       <div class="timeline-container">
@@ -397,8 +320,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Events -->
     <section class="events" id="events">
       <h2 class="events-title">Upcoming Events</h2>
       <div class="events-container">
@@ -418,8 +339,6 @@
         </div>
       </div>
     </section>
-
-    <!-- About Sanket -->
     <section class="section" id="about">
       <div class="section-header">
         <p class="section-subtitle">About</p>
@@ -433,10 +352,7 @@
         </div>
       </div>
     </section>
-
     <div class="about-divider"></div>
-
-    <!-- About ECEA -->
     <section class="section">
       <div class="section-header">
         <p class="section-subtitle">About</p>
@@ -453,10 +369,7 @@
         </div>
       </div>
     </section>
-
     <div class="about-divider"></div>
-
-    <!-- About NIT Calicut -->
     <section class="section">
       <div class="section-header">
         <p class="section-subtitle">Our Host</p>
@@ -473,14 +386,11 @@
         </div>
       </div>
     </section>
-
-    <!-- Contact (2 x 3 layout) -->
     <section class="contact-section" id="contact">
       <div class="section-header">
         <h2 class="section-title">Contact Details</h2>
         <p class="section-subtitle">Get In Touch With Us</p>
       </div>
-
       <div class="contact-grid">
         <div class="contact-card">
           <h4>Location</h4>
@@ -488,89 +398,68 @@
           <p>NIT Campus P.O 673601</p>
           <p>Kozhikode, Kerala</p>
         </div>
-
         <div class="contact-card">
           <h4>Contact - Sai</h4>
           <p>Phone: <a href="tel:+918089370282">8089370282</a></p>
         </div>
-
         <div class="contact-card">
           <h4>Contact - Sabin</h4>
           <p>Phone: <a href="tel:+919446978544">9446978544</a></p>
         </div>
-
         <div class="contact-card">
           <h4>Email</h4>
           <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
         </div>
-
         <div class="contact-card">
           <h4>Nearest Railway</h4>
           <p>Kozhikode - 27 KM</p>
         </div>
-
         <div class="contact-card">
           <h4>Nearest Airport</h4>
           <p>Calicut International Airport - 27 KM</p>
         </div>
       </div>
-
       <div class="map-container">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4895.318018097805!2d75.93115761146314!3d11.321607048853092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba642fd50000001%3A0xbe8a77db953bda6c!2sNIT%20Calicut!5e1!3m2!1sen!2sin!4v1769152294010!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
-
-    <!-- Footer -->
     <footer>
       <div class="footer-divider"></div>
-
       <div class="footer-content">
         <div class="footer-item">
           <h4>Contact - Sai</h4>
           <p><a href="tel:+918089370282">8089370282</a></p>
         </div>
-
         <div class="footer-item">
           <h4>Contact - Sabin</h4>
           <p><a href="tel:+919446978544">9446978544</a></p>
         </div>
-
         <div class="footer-item">
           <h4>Email</h4>
           <p><a href="mailto:ecea@nitc.ac.in">ecea@nitc.ac.in</a></p>
         </div>
       </div>
-
       <div class="footer-socials" style="margin-bottom:12px;">
         <a href="https://www.instagram.com/ecea_nitc/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
         <a href="https://www.linkedin.com/company/ecea-nitc/" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
       </div>
-
       <p class="copyright">© Copyright 2026 ECEA, NIT Calicut. All rights reserved.</p>
     </footer>
   </div>
-
-  <!-- JavaScript -->
   <script>
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('menu-overlay');
     const menuButton = document.querySelector('.menu-button');
-    const ANIM_MS = 360; // match CSS transition time
-
-    // initialize: ensure sidebar hidden on load for desktop/ mobile logic
+    const ANIM_MS = 360;
     (function initSidebarState(){
-      // hide visually by default; leave element in DOM
       sidebar.classList.remove('open');
       sidebar.setAttribute('aria-hidden','true');
       sidebar.style.display = 'none';
       overlay.classList.remove('visible');
       overlay.setAttribute('aria-hidden','true');
     })();
-
     function showSidebar(){
-      // show overlay and sidebar, then add open class to animate in
       sidebar.style.display = 'flex';
-      // small tick to ensure transition triggers
       requestAnimationFrame(() => {
         overlay.classList.add('visible');
         overlay.setAttribute('aria-hidden','false');
@@ -579,66 +468,46 @@
         document.body.style.overflow = 'hidden';
       });
     }
-
     function hideSidebar(){
-      // remove open class to animate out
       sidebar.classList.remove('open');
       overlay.classList.remove('visible');
       overlay.setAttribute('aria-hidden','true');
       sidebar.setAttribute('aria-hidden','true');
-      // restore scrolling after animation
       setTimeout(()=>{
         sidebar.style.display = 'none';
         document.body.style.overflow = '';
       }, ANIM_MS + 20);
     }
-
-    // Close sidebar when clicking overlay
-    overlay.addEventListener('click', function () {
-      hideSidebar();
-    });
-
-    // Close sidebar on escape key
+    overlay.addEventListener('click', function () { hideSidebar(); });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' || e.key === 'Esc') {
         if (sidebar.classList.contains('open')) hideSidebar();
       }
     });
-
-    // Smooth scrolling for in-page anchors and close mobile menu when link clicked
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (!href) return;
         if (href === '#') {
-          // allow # to do nothing (no navigation) — keep previous behavior
           e.preventDefault();
           return;
         }
         if (href.startsWith('#')) {
           e.preventDefault();
           const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-          // if mobile menu is open, close it
+          if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
           if (sidebar.classList.contains('open')) hideSidebar();
         }
       });
     });
-
-    // Keep navbar shadow when scrolling a bit (purely visual; navbar is fixed)
     window.addEventListener('scroll', function(){
       const navbar = document.getElementById('navbar');
       if (window.scrollY > 8) navbar.style.boxShadow = '0 16px 40px rgba(0,0,0,0.75)';
       else navbar.style.boxShadow = 'var(--shadow)';
     });
-
-    // Accessibility: if window is resized to desktop, ensure sidebar is closed and hidden
     window.addEventListener('resize', function() {
       const w = window.innerWidth;
       if (w > 780) {
-        // ensure mobile menu hidden on desktop
         sidebar.classList.remove('open');
         sidebar.style.display = 'none';
         overlay.classList.remove('visible');
@@ -647,8 +516,6 @@
         document.body.style.overflow = '';
       }
     });
-
-    // expose functions to inline onclicks used in HTML for backwards compatibility
     window.showSidebar = showSidebar;
     window.hideSidebar = hideSidebar;
   </script>
