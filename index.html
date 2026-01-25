@@ -229,14 +229,45 @@
     }
 
     section, .section { scroll-margin-top: calc(var(--nav-height) + var(--banner-height) + 12px); }
+
+
+    .brand-logos{
+    display:flex !important;
+    align-items:center !important;
+    gap:8px !important;              
+    }
+
+    /* Normalize logo size & kill transparent padding feel */
+    .brand-logos img{
+    height:38px !important;          /* consistent height */
+    width:auto !important; 
+    display:block !important;
+    object-fit:contain !important;
+    }
+
+
+    .brand-logos img{
+    filter:
+        brightness(0)
+        invert(1)
+        contrast(2)
+        drop-shadow(0 0 6px rgba(255,255,255,0.15)) !important;
+    }
+
+
   </style>
 </head>
 <body>
   <nav id="navbar" role="navigation" aria-label="Main Navigation">
     <div class="nav-inner">
-      <div class="nav-left">
-        <a href="#home"><img class="logo" src="ecea-logo.png" alt="ECEA Logo"></a>
-      </div>
+    <div class="nav-left">
+    <a href="#home" class="brand-logos">
+        <!-- <img src="sanket.png" alt="Sanket Logo"> -->
+        <img src="ecea-logo.png" alt="ECEA Logo">
+        <img src="nitc.png" alt="NIT Calicut Logo">
+        <img src="time.png" alt="TIME Logo">
+    </a>
+    </div>
       <div class="nav-center">
         <a class="hideOnMobile hoverStyle" href="#home">Home</a>
         <a class="hideOnMobile hoverStyle" href="#about">About</a>
@@ -298,6 +329,7 @@
     <div class="hero-text">
       <h1>Sanket'26</h1>
       <h2>Annual Department Event</h2>
+      <h4>Title Sponsor: <strong>T.I.M.E</strong></h4>
       <div class="hero-divider"></div>
       <p class="hero-info"><span class="date">31st January 2026</span> | <span class="location">NIT Calicut</span></p>
     </div>
