@@ -100,7 +100,7 @@ Sanket-26/
 ├── call-for-digest-submission.html      # Events & Workshops page
 ├── sponsorship.html                     # Sponsorship page
 ├── styles.css                           # Main stylesheet
-├── ecea-logo.png                        # ECEA logo
+├── ecea-logo.jpg                        # ECEA logo
 ├── admin-block.webp                     # NIT Calicut image
 ├── backgroundq.webp                     # Background image
 ├── menu_24dp_*.svg                      # Menu icon
